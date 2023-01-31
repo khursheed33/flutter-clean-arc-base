@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MMScreenHeader extends StatelessWidget {
+class AppScreenHeader extends StatelessWidget {
   final IconData icon;
   final double? paddingTop;
-  const MMScreenHeader({
+  const AppScreenHeader({
     Key? key,
     this.paddingTop,
     required this.icon,

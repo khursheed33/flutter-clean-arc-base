@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MMDateTimePicker extends StatelessWidget {
+class AppDateTimePicker extends StatelessWidget {
   final Function(DateTime dateTime)? pickedDateHandler;
   final Color? iconColor;
   final double? iconSize;
@@ -8,7 +8,7 @@ class MMDateTimePicker extends StatelessWidget {
   final DateTime? firstDate;
   final DateTime? initialDate;
 
-  const MMDateTimePicker({
+  const AppDateTimePicker({
     Key? key,
     required this.pickedDateHandler,
     this.initialDate,

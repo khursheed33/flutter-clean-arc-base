@@ -1,4 +1,4 @@
-class MMValidator {
+class AppValidator {
   static bool isValidName(String name) {
     final pattern = RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]');
     return pattern.hasMatch(name);
@@ -34,7 +34,7 @@ class MMValidator {
     if (val!.isEmpty) {
       return "Email cannot be empty!";
     }
-    if (!MMValidator.isValidEmail(val.trim())) {
+    if (!AppValidator.isValidEmail(val.trim())) {
       return "Invalid email address!";
     }
     return null;

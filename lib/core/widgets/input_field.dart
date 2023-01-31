@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class MMInputForm extends StatelessWidget {
-  const MMInputForm({
+class AppInputForm extends StatelessWidget {
+  const AppInputForm({
     Key? key,
     this.passwordVisiblityHandler,
     this.isPasswordVisible,

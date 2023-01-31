@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_arc_base/core/widgets/custom_loader.dart';
 
-class MMNextButtonCircle extends StatelessWidget {
+class AppNextButtonCircle extends StatelessWidget {
   final Color? backgroundColor;
   final Color? iconColor;
   final Function()? onPressed;
   final bool isBusy;
-  const MMNextButtonCircle({
+  const AppNextButtonCircle({
     Key? key,
     this.backgroundColor,
     this.iconColor,
@@ -21,7 +21,7 @@ class MMNextButtonCircle extends StatelessWidget {
       elevation: 0.0,
       onPressed: isBusy ? null : onPressed,
       child: isBusy
-          ? MMCircularProgress(
+          ? AppCircularProgress(
               color: Theme.of(context).canvasColor,
             )
           : Icon(

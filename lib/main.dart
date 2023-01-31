@@ -11,5 +11,5 @@ Future<void> main() async {
   // Dependency Injection
   await initializeDependencies();
   // Start App
-  runApp(const MMAppFoundation());
+  runApp(const AppFoundation());
 }

@@ -3,20 +3,20 @@ import 'package:flutter/cupertino.dart';
 import '../views/screens/splash/splash_screen.dart';
 import 'route_paths.dart';
 
-class MMRoutes {
+class AppRoutes {
   static Route<dynamic>? routes(RouteSettings settings) {
     switch (settings.name) {
-      case MMRoutePaths.root:
+      case AppRoutePaths.root:
         return CupertinoPageRoute(
-          builder: (ctx) => const MMSplashScreen(),
+          builder: (ctx) => const SplashScreen(),
           settings: settings,
-          title: MMRoutePaths.root,
+          title: AppRoutePaths.root,
         );
     }
     return CupertinoPageRoute(
-      builder: (ctx) => const MMSplashScreen(),
+      builder: (ctx) => const SplashScreen(),
       settings: settings,
-      title: MMRoutePaths.root,
+      title: AppRoutePaths.root,
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_arc_base/core/enums/font_type.dart';
 
-class MMTitle extends StatelessWidget {
+class AppTitle extends StatelessWidget {
   final String title;
   final Color? color;
   final int? maxLines;
@@ -11,7 +11,7 @@ class MMTitle extends StatelessWidget {
   final double? letterSpacing;
   final FontWeight? fontWeight;
   final TextOverflow? overflow;
-  const MMTitle(
+  const AppTitle(
     this.title, {
     Key? key,
     this.color,

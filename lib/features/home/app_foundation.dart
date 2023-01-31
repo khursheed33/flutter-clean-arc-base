@@ -6,19 +6,19 @@ import 'route_paths.dart';
 import 'routes.dart';
 import 'package:provider/provider.dart';
 
-class MMAppFoundation extends StatelessWidget {
-  const MMAppFoundation({Key? key}) : super(key: key);
+class AppFoundation extends StatelessWidget {
+  const AppFoundation({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: MMProviders.mmProviders,
+      providers: AppProviders.appProviders,
       child: MaterialApp(
         theme: appTheme(context),
         title: AppText.appName,
         debugShowCheckedModeBanner: false,
-        initialRoute: MMRoutePaths.root,
-        onGenerateRoute: MMRoutes.routes,
+        initialRoute: AppRoutePaths.root,
+        onGenerateRoute: AppRoutes.routes,
       ),
     );
   }

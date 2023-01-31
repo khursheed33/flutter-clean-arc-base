@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MMBackButton extends StatelessWidget {
+class AppBackButton extends StatelessWidget {
   final Color? color;
   final EdgeInsetsGeometry? margin;
-  const MMBackButton({
+  const AppBackButton({
     Key? key,
     this.color,
     this.margin,

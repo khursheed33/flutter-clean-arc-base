@@ -3,12 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants/app_graphics.dart';
 
-class MMHeaderWithImage extends StatelessWidget {
+class AppHeaderWithImage extends StatelessWidget {
   final String? assetName;
   final double? height;
   final double? width;
   final BoxFit? boxFit;
-  const MMHeaderWithImage({
+  const AppHeaderWithImage({
     Key? key,
     this.assetName,
     this.height,

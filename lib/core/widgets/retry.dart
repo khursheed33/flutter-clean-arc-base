@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../errors/error_message.dart';
 import 'app_title.dart';
 
-class MMRetryOnNoInternet extends StatelessWidget {
+class AppRetryOnNoInternet extends StatelessWidget {
   final Function()? onRetry;
-  const MMRetryOnNoInternet({
+  const AppRetryOnNoInternet({
     Key? key,
     this.onRetry,
   }) : super(key: key);
@@ -15,7 +15,7 @@ class MMRetryOnNoInternet extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const MMTitle(
+        const AppTitle(
           ErrorMessage.noInternetConnection,
           fontWeight: FontWeight.normal,
           fontSize: 18,

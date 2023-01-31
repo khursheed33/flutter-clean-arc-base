@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'app_title.dart';
 
-class MMTitleWithBG extends StatelessWidget {
+class AppTitleWithBG extends StatelessWidget {
   final Color? bgColor;
   final String title;
   final double? fontSize;
   final AlignmentGeometry? textAlign;
-  const MMTitleWithBG({
+  const AppTitleWithBG({
     Key? key,
     this.bgColor,
     this.fontSize,
@@ -28,7 +28,7 @@ class MMTitleWithBG extends StatelessWidget {
         color: bgColor ?? Theme.of(context).dividerColor,
         borderRadius: BorderRadius.circular(4),
       ),
-      child: MMTitle(title),
+      child: AppTitle(title),
     );
   }
 }

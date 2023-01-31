@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MMCircularProgress extends StatelessWidget {
+class AppCircularProgress extends StatelessWidget {
   final double? size;
   final Color? color;
   final bool needElevation;
-  const MMCircularProgress({
+  const AppCircularProgress({
     Key? key,
     this.size,
     this.color,

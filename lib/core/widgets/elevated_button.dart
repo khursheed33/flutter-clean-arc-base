@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MMElevatedButton extends StatelessWidget {
+class AppElevatedButton extends StatelessWidget {
   final Color? color;
   final String title;
   final double? radius;
@@ -16,7 +16,7 @@ class MMElevatedButton extends StatelessWidget {
   final Color? borderColor;
   final FontWeight? fontWeight;
   final Function() onPressHandler;
-  const MMElevatedButton({
+  const AppElevatedButton({
     Key? key,
     this.icon,
     this.color,

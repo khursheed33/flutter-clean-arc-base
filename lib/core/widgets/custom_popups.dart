@@ -61,7 +61,7 @@ class CustomPopup {
                     ),
                   ),
                   const SizedBox(height: 15),
-                  MMTitle(
+                  AppTitle(
                     title,
                     textAlign: TextAlign.center,
                     fontWeight: FontWeight.bold,
@@ -73,7 +73,7 @@ class CustomPopup {
                   if (subtitle != null)
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: MMTitle(
+                      child: AppTitle(
                         subtitle,
                         fontSize: 12,
                         textAlign: TextAlign.center,
@@ -89,7 +89,7 @@ class CustomPopup {
                           onPressed: () {
                             return Navigator.of(ctx).pop(false);
                           },
-                          child: MMTitle(
+                          child: AppTitle(
                             AppText.maybeLater,
                             fontSize: 14,
                             color: isError == true
@@ -121,7 +121,7 @@ class CustomPopup {
                                 ? 10
                                 : 30,
                           ),
-                          child: MMTitle(
+                          child: AppTitle(
                             confirmBtnTitle ?? AppText.okay,
                             fontSize: 14,
                             color: Theme.of(context).canvasColor,
@@ -154,7 +154,7 @@ class CustomPopup {
             mainAxisSize: MainAxisSize.min,
             children: [
               if (title != null) ...[
-                MMTitle(title),
+                AppTitle(title),
                 const Divider(),
                 const SizedBox(height: 15),
                 Row(
@@ -167,7 +167,7 @@ class CustomPopup {
                       child: CircularProgressIndicator.adaptive(),
                     ),
                     SizedBox(width: 15),
-                    MMTitle(
+                    AppTitle(
                       AppText.pleaseWait,
                       fontSize: 16,
                     )
@@ -181,7 +181,7 @@ class CustomPopup {
                   child: CircularProgressIndicator.adaptive(),
                 ),
                 SizedBox(height: 15),
-                MMTitle(
+                AppTitle(
                   AppText.pleaseWait,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,

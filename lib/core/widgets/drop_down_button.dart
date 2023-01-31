@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MMDropdown extends StatefulWidget {
+class AppDropdown extends StatefulWidget {
   final List<dynamic> items;
   final Function(dynamic selectedItem)? dropValHandler;
   final Function(int index)? indexHandler;
@@ -13,7 +13,7 @@ class MMDropdown extends StatefulWidget {
   final bool? wantAddOption;
 
   // final dynamic currentItem;
-  const MMDropdown({
+  const AppDropdown({
     Key? key,
     this.fontColor,
     this.indexHandler,
@@ -28,10 +28,10 @@ class MMDropdown extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _MMDropdownState();
+  State<StatefulWidget> createState() => _AppDropdownState();
 }
 
-class _MMDropdownState extends State<MMDropdown> {
+class _AppDropdownState extends State<AppDropdown> {
   bool _isExpanded = false;
   dynamic selectedItem;
 

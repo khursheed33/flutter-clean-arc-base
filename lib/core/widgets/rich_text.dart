@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MMRichText extends StatelessWidget {
+class AppRichText extends StatelessWidget {
   final String? label;
   final String value;
   final Color? labelColor;
@@ -11,7 +11,7 @@ class MMRichText extends StatelessWidget {
   final FontWeight? labelFontWeight;
   final FontWeight? valueFontWeight;
 
-  const MMRichText({
+  const AppRichText({
     Key? key,
     required this.value,
     this.label,

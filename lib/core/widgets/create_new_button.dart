@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_clean_arc_base/core/widgets/app_title.dart';
 
-class MMCreateNewButton extends StatelessWidget {
+class AppCreateNewButton extends StatelessWidget {
   final Function()? onPressed;
   final String? title;
   final IconData? icon;
@@ -12,7 +12,7 @@ class MMCreateNewButton extends StatelessWidget {
   final FontWeight? fontWeight;
   final double? iconSize;
 
-  const MMCreateNewButton({
+  const AppCreateNewButton({
     Key? key,
     required this.onPressed,
     this.title,
@@ -42,7 +42,7 @@ class MMCreateNewButton extends StatelessWidget {
             size: iconSize ?? 20,
           ),
           const SizedBox(width: 5),
-          MMTitle(
+          AppTitle(
             title ?? "New",
             color: Theme.of(context).canvasColor,
             textAlign: TextAlign.center,
