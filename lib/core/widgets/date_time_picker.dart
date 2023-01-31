@@ -22,15 +22,15 @@ class MMDateTimePicker extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () async {
-        final DateTime? _selectedDate = await showDatePicker(
+        final DateTime? selectedDate = await showDatePicker(
           context: context,
           initialDate: initialDate ?? DateTime.now(),
           firstDate: firstDate ?? DateTime.utc(1900),
           lastDate: endDate ?? DateTime.now(),
         );
 
-        if (_selectedDate != null && _selectedDate != DateTime.now()) {
-          pickedDateHandler!(_selectedDate);
+        if (selectedDate != null && selectedDate != DateTime.now()) {
+          pickedDateHandler!(selectedDate);
         }
       },
       icon: Icon(

@@ -26,8 +26,9 @@ class MMDropdown extends StatefulWidget {
     required this.dropValHandler,
     required this.initialItem,
   }) : super(key: key);
+
   @override
-  _MMDropdownState createState() => _MMDropdownState();
+  State<StatefulWidget> createState() => _MMDropdownState();
 }
 
 class _MMDropdownState extends State<MMDropdown> {

@@ -28,63 +28,63 @@ ThemeData appTheme(BuildContext context) {
   return ThemeData(
     // Color Scheme
     fontFamily: FontType.Fira.name,
-    primarySwatch: Colors.pink,
     canvasColor: const Color.fromARGB(255, 251, 245, 247),
     splashColor: Colors.pink[100],
     focusColor: Colors.pink[200],
     hoverColor: Colors.pink[300],
     shadowColor: Colors.pink[900],
-    backgroundColor: Colors.white,
     // Typography
     textTheme: TextTheme(
-      headline1: TextStyle(
+      displayLarge: TextStyle(
         fontFamily: FontType.Fira.name,
         color: Colors.pink,
         fontWeight: FontWeight.bold,
         fontSize: 40,
       ),
-      headline2: TextStyle(
+      displayMedium: TextStyle(
         color: Colors.pink,
         fontFamily: FontType.Fira.name,
         fontWeight: FontWeight.normal,
         fontSize: 30,
       ),
-      headline3: TextStyle(
+      displaySmall: TextStyle(
         color: Colors.pink,
         fontFamily: FontType.Fira.name,
         fontWeight: FontWeight.bold,
         fontSize: 26,
       ),
-      headline4: TextStyle(
+      headlineMedium: TextStyle(
         color: Colors.pink,
         fontFamily: FontType.Fira.name,
         fontWeight: FontWeight.normal,
         fontSize: 26,
       ),
-      headline5: TextStyle(
+      headlineSmall: TextStyle(
         color: Colors.pink,
         fontFamily: FontType.Fira.name,
         fontWeight: FontWeight.bold,
         fontSize: 20,
       ),
-      headline6: TextStyle(
+      titleLarge: TextStyle(
         color: Colors.pink,
         fontFamily: FontType.Fira.name,
         fontWeight: FontWeight.bold,
         fontSize: 18,
       ),
-      bodyText1: TextStyle(
+      bodyLarge: TextStyle(
         color: Colors.grey[600],
         fontFamily: FontType.Signika.name,
         fontWeight: FontWeight.normal,
         fontSize: 16,
       ),
-      bodyText2: TextStyle(
+      bodyMedium: TextStyle(
         color: Colors.pink,
         fontFamily: FontType.Signika.name,
         fontWeight: FontWeight.normal,
         fontSize: 12,
       ),
     ),
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
+        .copyWith(background: Colors.white),
   );
 }

@@ -3,15 +3,6 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 
 class Generate {
-  static String subjectCode(String sub) {
-    const String _prefix = "CE";
-    String _subCode = _prefix;
-    for (int i = 0; i < sub.length; i++) {
-      _subCode += "$i${sub[i]}";
-    }
-    return _subCode;
-  }
-
   static String uid() {
     const String pushChars =
         '-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
@@ -42,19 +33,6 @@ class Generate {
       uniqueId += pushChars[lastRandChars[i]];
     }
     return uniqueId;
-  }
-
-  static String fullName(String first, String last) {
-    return first + " " + last;
-  }
-
-  static String shortName(String name) {
-    final _listOfWord = name.split(' ');
-    String _result = '';
-    for (String n in _listOfWord) {
-      _result += n[0].toUpperCase();
-    }
-    return _result;
   }
 
   static Color color({double? opacity}) {

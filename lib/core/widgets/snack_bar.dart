@@ -13,7 +13,7 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
       backgroundColor: color != null && isError == false
           ? color
           : isError
-              ? Theme.of(context).errorColor
+              ? Theme.of(context).colorScheme.error
               : null,
       content: Text(msg),
     ),

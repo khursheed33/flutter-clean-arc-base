@@ -66,15 +66,15 @@ Future<void> initializeDependencies() async {
     :::::::: EXTERNAL DATA SOURCES - DEPENDENCIES ::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
  */
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseStorage _storage = FirebaseStorage.instance;
-  final FirebaseFirestore _firesotre = FirebaseFirestore.instance;
-  final AwesomeNotifications _notification = AwesomeNotifications();
-  final Connectivity _connectivity = Connectivity();
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  final FirebaseStorage storage = FirebaseStorage.instance;
+  final FirebaseFirestore firesotre = FirebaseFirestore.instance;
+  final AwesomeNotifications notification = AwesomeNotifications();
+  final Connectivity connectivity = Connectivity();
 
-  locator.registerLazySingleton(() => _auth);
-  locator.registerLazySingleton(() => _storage);
-  locator.registerLazySingleton(() => _firesotre);
-  locator.registerLazySingleton(() => _notification);
-  locator.registerLazySingleton(() => _connectivity);
+  locator.registerLazySingleton(() => auth);
+  locator.registerLazySingleton(() => storage);
+  locator.registerLazySingleton(() => firesotre);
+  locator.registerLazySingleton(() => notification);
+  locator.registerLazySingleton(() => connectivity);
 }

@@ -27,14 +27,15 @@ class ResourceNotFound extends StatelessWidget {
             Icon(
               icon ?? Icons.info,
               size: iconSize,
-              color: Theme.of(context).errorColor.withOpacity(0.7),
+              color: Theme.of(context).colorScheme.error.withOpacity(0.7),
             ),
           const SizedBox(height: 5),
           Text(
             title,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: textColor ?? Theme.of(context).errorColor.withOpacity(1),
+              color: textColor ??
+                  Theme.of(context).colorScheme.error.withOpacity(1),
             ),
           ),
         ],

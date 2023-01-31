@@ -18,7 +18,7 @@ class BaseView<VM extends BaseModel> extends StatefulWidget {
   ) builder;
 
   @override
-  _BaseViewState<VM> createState() => _BaseViewState();
+  State<StatefulWidget> createState() => _BaseViewState<VM>();
 }
 
 class _BaseViewState<VM extends BaseModel> extends State<BaseView<VM>> {

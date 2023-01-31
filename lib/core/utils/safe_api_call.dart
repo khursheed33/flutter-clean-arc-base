@@ -24,8 +24,8 @@ class SafeApiCallImpl extends SafeApiCall {
   Future<Either<Failure, T>> callApi<T>(Future<T> Function() handler) async {
     if (await networkInfo.isConnected) {
       try {
-        final _res = await handler();
-        return Right(_res);
+        final response = await handler();
+        return Right(response);
       } on HttpException catch (err) {
         return Left(Failure(err.message));
       } on SocketException catch (err) {

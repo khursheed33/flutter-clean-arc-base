@@ -38,7 +38,10 @@ class CustomPopup {
                         icon: Icon(
                           Icons.cancel,
                           color: isError == true
-                              ? Theme.of(context).errorColor.withOpacity(0.4)
+                              ? Theme.of(context)
+                                  .colorScheme
+                                  .error
+                                  .withOpacity(0.4)
                               : Theme.of(context).disabledColor,
                         ),
                         onPressed: () {
@@ -62,8 +65,9 @@ class CustomPopup {
                     title,
                     textAlign: TextAlign.center,
                     fontWeight: FontWeight.bold,
-                    color:
-                        isError == true ? Theme.of(context).errorColor : null,
+                    color: isError == true
+                        ? Theme.of(context).colorScheme.error
+                        : null,
                   ),
                   const SizedBox(height: 10),
                   if (subtitle != null)
@@ -89,7 +93,7 @@ class CustomPopup {
                             AppText.maybeLater,
                             fontSize: 14,
                             color: isError == true
-                                ? Theme.of(context).errorColor
+                                ? Theme.of(context).colorScheme.error
                                 : Theme.of(context).primaryColor,
                           ),
                         ),
@@ -102,7 +106,7 @@ class CustomPopup {
                           ),
                           backgroundColor: MaterialStateProperty.all<Color>(
                             isError == true
-                                ? Theme.of(context).errorColor
+                                ? Theme.of(context).colorScheme.error
                                 : Theme.of(context).primaryColor,
                           ),
                         ),
@@ -191,14 +195,14 @@ class CustomPopup {
   }
 
   static Future<bool> exitApp(BuildContext context) async {
-    final _res = await CustomPopup.common(
+    final response = await CustomPopup.common(
       context,
       icon: Icons.exit_to_app_rounded,
       title: "Do you want to exit?",
       confirmBtnTitle: "Exit",
       subtitle: null,
     );
-    if (_res == null) return false;
-    return _res;
+    if (response == null) return false;
+    return response;
   }
 }

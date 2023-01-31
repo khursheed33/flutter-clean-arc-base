@@ -1,13 +1,13 @@
 class MMValidator {
   static bool isValidName(String name) {
-    final _pattern = RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]');
-    return _pattern.hasMatch(name);
+    final pattern = RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]');
+    return pattern.hasMatch(name);
   }
 
   static bool isValidEmail(String email) {
-    final _pattern = RegExp(
+    final pattern = RegExp(
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
-    return _pattern.hasMatch(email);
+    return pattern.hasMatch(email);
   }
 
   static bool moreThan8Chars(String password) {
@@ -15,18 +15,18 @@ class MMValidator {
   }
 
   static bool smallAndUpperCase(String password) {
-    final _pattern = RegExp(r'^(?=.*[A-Z])(?=.*[a-z])');
-    return _pattern.hasMatch(password);
+    final pattern = RegExp(r'^(?=.*[A-Z])(?=.*[a-z])');
+    return pattern.hasMatch(password);
   }
 
   static bool specialCharacter(String password) {
-    final _pattern = RegExp(r'[!@#\$%^&*(),.?":{}|<>]');
-    return _pattern.hasMatch(password);
+    final pattern = RegExp(r'[!@#\$%^&*(),.?":{}|<>]');
+    return pattern.hasMatch(password);
   }
 
   static bool oneNumber(String password) {
-    final _pattern = RegExp(r'^(?=.*?[0-9])');
-    return _pattern.hasMatch(password);
+    final pattern = RegExp(r'^(?=.*?[0-9])');
+    return pattern.hasMatch(password);
   }
 
   // Field Validators
