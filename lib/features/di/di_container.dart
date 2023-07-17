@@ -68,13 +68,13 @@ Future<void> initializeDependencies() async {
  */
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseStorage storage = FirebaseStorage.instance;
-  final FirebaseFirestore firesotre = FirebaseFirestore.instance;
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
   final AwesomeNotifications notification = AwesomeNotifications();
   final Connectivity connectivity = Connectivity();
 
   locator.registerLazySingleton(() => auth);
   locator.registerLazySingleton(() => storage);
-  locator.registerLazySingleton(() => firesotre);
+  locator.registerLazySingleton(() => firestore);
   locator.registerLazySingleton(() => notification);
   locator.registerLazySingleton(() => connectivity);
 }
