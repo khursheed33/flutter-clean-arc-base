@@ -2,15 +2,11 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_clean_arc_base/core/errors/invalid_exception.dart';
 
 import '../errors/failure.dart';
 import '../network/connection.dart';
-
-// ignore: constant_identifier_names
-const String NO_INTERNET_CONNECTION = "No internet connection!";
 
 abstract class SafeApiCall {
   Future<Either<Failure, T>> callApi<T>(Future<T> Function() handler);
@@ -32,10 +28,6 @@ class SafeApiCallImpl extends SafeApiCall {
         return Left(Failure(err.message));
       } on FormatException catch (err) {
         return Left(Failure(err.message));
-      } on FirebaseAuthException catch (err) {
-        return Left(Failure(err.message.toString()));
-      } on FirebaseException catch (err) {
-        return Left(Failure(err.message.toString()));
       } on IOException catch (err) {
         return Left(Failure(err.toString()));
       } on InvalidException catch (err) {
@@ -46,7 +38,7 @@ class SafeApiCallImpl extends SafeApiCall {
         return Left(Failure(err.message.toString()));
       }
     } else {
-      return Left(Failure(NO_INTERNET_CONNECTION));
+      return Left(Failure("No internet connection!"));
     }
   }
 }

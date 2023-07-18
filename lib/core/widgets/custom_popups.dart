@@ -157,10 +157,10 @@ class CustomPopup {
                 AppTitle(title),
                 const Divider(),
                 const SizedBox(height: 15),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(
                       height: 25,
                       width: 25,
