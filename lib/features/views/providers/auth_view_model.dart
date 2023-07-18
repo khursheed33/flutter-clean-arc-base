@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter_clean_arc_base/features/views/base/base_model.dart';
+import '../../presentation/base/base_model.dart';
 
 class AuthViewModel extends BaseModel {
   final StreamController<String> dynamicStreamController =

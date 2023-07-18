@@ -2,15 +2,10 @@
 
 A new Flutter project.
 
-## Getting Started
+## Install Packages:
 
-This project is a starting point for a Flutter application.
+ - Regular Dependencies
+    `flutter pub add http intl dartz get_it provider equatable flutter_svg url_launcher firebase_auth firebase_core cupertino_icons json_annotation cloud_firestore firebase_storage connectivity_plus font_awesome_flutter awesome_notifications`
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ - Dev Dependencies:
+    `flutter pub add --dev build_runner flutter_lints json_serializable flutter_launcher_icons flutter_native_splash`
