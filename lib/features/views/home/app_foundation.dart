@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import '../../../core/constants/app_text.dart';
 import '../../../core/enums/font_type.dart';
 import 'providers.dart';
 import 'route_paths.dart';
 import 'routes.dart';
-import 'package:provider/provider.dart';
 
 class AppFoundation extends StatelessWidget {
   const AppFoundation({Key? key}) : super(key: key);

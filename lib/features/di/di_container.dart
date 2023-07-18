@@ -1,12 +1,16 @@
-import 'package:flutter_clean_arc_base/features/views/providers/auth_view_model.dart';
-import 'package:get_it/get_it.dart';
-
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_clean_arc_base/features/data/repositories/authentication_repo_impl.dart';
+import 'package:flutter_clean_arc_base/features/domain/repositories/authentication_repository.dart';
+import 'package:get_it/get_it.dart';
+import 'package:hive/hive.dart';
 
+import '../../core/constants/hive_collections.dart';
 import '../../core/network/connection.dart';
 import '../../core/usecases/safe_api_call_usecase.dart';
 import '../../core/utils/safe_api_call.dart';
+import 'di_providers.dart';
 
 final GetIt locator = GetIt.instance;
 
@@ -17,7 +21,7 @@ Future<void> initializeDependencies() async {
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  */
 
-  locator.registerFactory<AuthViewModel>(() => AuthViewModel());
+  DiProviders(locator: locator);
 
 /* 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -47,6 +51,12 @@ Future<void> initializeDependencies() async {
     :::::::::::::::  REPOSITORIES ::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
  */
+  locator.registerLazySingleton<AuthenticationRepository>(
+    () => AuthRepositoryImpl(
+      datasource: locator.call(),
+      safeApiCall: locator.call(),
+    ),
+  );
 
 /* 
 :::::::::::::::::::::::::::::::
@@ -66,10 +76,13 @@ Future<void> initializeDependencies() async {
     :::::::: EXTERNAL DATA SOURCES - DEPENDENCIES ::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
  */
-
-  final AwesomeNotifications notification = AwesomeNotifications();
+  final Dio dio = Dio();
   final Connectivity connectivity = Connectivity();
+  final Box hiveBox = Hive.box(HiveCollections.localDB);
+  final AwesomeNotifications notification = AwesomeNotifications();
 
-  locator.registerLazySingleton(() => notification);
-  locator.registerLazySingleton(() => connectivity);
+  locator.registerLazySingleton<Dio>(() => dio);
+  locator.registerLazySingleton<Box>(() => hiveBox);
+  locator.registerLazySingleton<Connectivity>(() => connectivity);
+  locator.registerLazySingleton<AwesomeNotifications>(() => notification);
 }

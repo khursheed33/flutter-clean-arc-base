@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_arc_base/core/widgets/custom_loader.dart';
+
+import 'custom_loader.dart';
 
 class AppNextButtonCircle extends StatelessWidget {
   final Color? backgroundColor;

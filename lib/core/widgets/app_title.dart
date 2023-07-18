@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_arc_base/core/enums/font_type.dart';
+
+import '../enums/font_type.dart';
 
 class AppTitle extends StatelessWidget {
   final String title;

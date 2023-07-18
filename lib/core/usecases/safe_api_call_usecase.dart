@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import '../utils/safe_api_call.dart';
 
 import '../errors/failure.dart';
+import '../utils/safe_api_call.dart';
 
 class SafeApiCallUsecase {
   final SafeApiCall safeApiCall;

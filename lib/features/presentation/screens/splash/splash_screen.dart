@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_arc_base/core/widgets/app_title.dart';
-import 'package:flutter_clean_arc_base/core/widgets/custom_loader.dart';
 
+import '../../../../core/widgets/app_title.dart';
+import '../../../../core/widgets/custom_loader.dart';
 import '../../../views/providers/auth_view_model.dart';
 import '../../base/base_view_model.dart';
 

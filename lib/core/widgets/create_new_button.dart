@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter_clean_arc_base/core/widgets/app_title.dart';
+
+import 'app_title.dart';
 
 class AppCreateNewButton extends StatelessWidget {
   final Function()? onPressed;

@@ -3,9 +3,9 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_clean_arc_base/core/errors/invalid_exception.dart';
 
 import '../errors/failure.dart';
+import '../errors/invalid_exception.dart';
 import '../network/connection.dart';
 
 abstract class SafeApiCall {
