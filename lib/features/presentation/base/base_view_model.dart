@@ -21,7 +21,8 @@ class BaseView<VM extends BaseModel> extends StatefulWidget {
   State<StatefulWidget> createState() => _BaseViewState<VM>();
 }
 
-class _BaseViewState<VM extends BaseModel> extends State<BaseView<VM>> {
+class _BaseViewState<VM extends BaseModel> extends State<BaseView<VM>>
+    with TickerProviderStateMixin {
   final VM _model = locator<VM>();
   @override
   void initState() {
