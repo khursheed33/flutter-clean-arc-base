@@ -5,9 +5,9 @@ import '../../entities/user_entity.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/usecases/base_usecase.dart';
 
-class GetLocalInstituteUsecase extends BaseUsecase<UserEntity, String> {
+class GetLocalUserUsecase extends BaseUsecase<UserEntity, String> {
   final AuthenticationRepository repository;
-  GetLocalInstituteUsecase({
+  GetLocalUserUsecase({
     required this.repository,
   });
   @override
