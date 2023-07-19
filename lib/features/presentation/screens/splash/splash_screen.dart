@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/widgets/app_title.dart';
 import '../../../../core/widgets/custom_loader.dart';
-import '../../../views/providers/auth_view_model.dart';
+import '../../providers/auth_view_model.dart';
 import '../../base/base_view_model.dart';
 
 class SplashScreen extends StatelessWidget {

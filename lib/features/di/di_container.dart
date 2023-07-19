@@ -1,6 +1,7 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_clean_arc_base/core/utils/app_directory.dart';
 import 'package:flutter_clean_arc_base/features/data/repositories/authentication_repo_impl.dart';
 import 'package:flutter_clean_arc_base/features/domain/repositories/authentication_repository.dart';
 import 'package:get_it/get_it.dart';
@@ -15,6 +16,11 @@ import 'di_providers.dart';
 final GetIt locator = GetIt.instance;
 
 Future<void> initializeDependencies() async {
+  final appDocumentsDirectory = await getAppDir();
+  // Provide the path to store the Hive boxes (data)
+  Hive.init(appDocumentsDirectory);
+  // Open Hive Box
+  await Hive.openBox(HiveCollections.localDB);
 /* 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     :::::::::::::::: VIEWMODELS/PROVIDERS/CONTROLLERS ::::::::::::::::::::

@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 
-import '../views/providers/auth_view_model.dart';
+import '../presentation/providers/auth_view_model.dart';
 
 class DiProviders {
   final GetIt locator;
