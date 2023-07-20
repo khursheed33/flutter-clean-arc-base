@@ -8,9 +8,12 @@ class BaseView<VM extends BaseModel> extends StatefulWidget {
   const BaseView({
     Key? key,
     this.onModelReady,
+    this.onModelDispose,
     required this.builder,
   }) : super(key: key);
   final Function(VM)? onModelReady;
+  final Function(VM)? onModelDispose;
+
   final Widget Function(
     BuildContext context,
     VM model,
@@ -30,6 +33,14 @@ class _BaseViewState<VM extends BaseModel> extends State<BaseView<VM>>
 
     if (widget.onModelReady != null) {
       widget.onModelReady!(_model);
+    }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    if (widget.onModelDispose != null) {
+      widget.onModelDispose!(_model);
     }
   }
 

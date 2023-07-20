@@ -11,4 +11,6 @@ abstract class BaseModel extends ChangeNotifier {
     _state = viewState;
     notifyListeners();
   }
+
+  void disposeModel();
 }

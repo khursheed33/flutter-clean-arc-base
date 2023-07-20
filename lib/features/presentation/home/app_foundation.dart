@@ -3,9 +3,9 @@ import 'package:provider/provider.dart';
 
 import '../../../../core/constants/app_text.dart';
 import '../../../../core/enums/font_type.dart';
-import 'providers.dart';
-import 'route_paths.dart';
-import 'routes.dart';
+import 'app_providers.dart';
+import 'app_route_paths.dart';
+import 'app_routes.dart';
 
 class AppFoundation extends StatelessWidget {
   const AppFoundation({Key? key}) : super(key: key);
