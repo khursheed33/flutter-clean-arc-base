@@ -1,11 +1,32 @@
 import 'dart:async';
 
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_clean_arc_base/core/params/sign_in_params.dart';
+import 'package:flutter_clean_arc_base/core/utils/response_message.dart';
+import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/create_user_usecase.dart';
+import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/get_token_usecase.dart';
+import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/get_user_usecase.dart';
+import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/sign_in_usecase.dart';
+import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/sign_out_usecase.dart';
 
+import '../../../core/params/no_params.dart';
 import '../base/base_model.dart';
 
 class AuthViewModel extends BaseModel {
+  final CreateUserUsecase createUserUsecase;
+  final GetTokenUsecase getTokenUsecase;
+  final GetUserUsecase getUserUsecase;
+  final SignOutUsecase signOutUsecase;
+  final SignInUsecase signInUsecase;
   String? _token;
+
+  AuthViewModel({
+    required this.createUserUsecase,
+    required this.getTokenUsecase,
+    required this.signOutUsecase,
+    required this.getUserUsecase,
+    required this.signInUsecase,
+  });
+
   String? get token => _token;
 
   setToken(String? newToken) {
@@ -14,41 +35,43 @@ class AuthViewModel extends BaseModel {
   }
 
   Future<String?> isTokenExists() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    final gotToken = prefs.getString('authToken');
-    setToken(gotToken);
-    return gotToken;
+    final response = await getTokenUsecase.call(NoParams());
+    if (response.isRight()) {
+      final token = FunctionalResponse.success<String?>(response);
+      setToken(token);
+    }
+    return null;
   }
 
-  final _userController = StreamController<User?>.broadcast();
-  Stream<User?> get userStream => _userController.stream;
+  final _userController = StreamController<String?>.broadcast();
+  Stream<String?> get userStream => _userController.stream;
 
   Future<void> login() async {
     // Save the auth token to shared preferences
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('authToken', "12891kjsnfkdjslkj");
+    final singInParam = SignInParams(
+      username: "khursheed33",
+      password: "12345",
+    );
 
-    // Emit the user object with the token
-    _userController.sink.add(User("12891kjsnfkdjslkj"));
+    final response = await signInUsecase.call(singInParam);
+
+    if (response.isRight()) {
+      final token = FunctionalResponse.success<String?>(response);
+      setToken(token);
+      _userController.sink.add(token);
+    }
   }
 
   Future<void> logout() async {
-    // Remove the auth token from shared preferences
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.remove('authToken');
-
-    // Emit null to indicate user is logged out
-    _userController.sink.add(null);
+    final response = await signOutUsecase.call(NoParams());
+    if (response.isRight()) {
+      // Emit null to indicate user is logged out
+      _userController.sink.add(null);
+    }
   }
 
   @override
   void disposeModel() {
     _userController.close();
   }
-}
-
-class User {
-  final String authToken;
-
-  User(this.authToken);
 }

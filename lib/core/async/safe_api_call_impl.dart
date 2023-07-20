@@ -3,23 +3,20 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_clean_arc_base/core/usecases/base_usecase.dart';
+import 'package:flutter_clean_arc_base/core/async/safe_api_repo.dart';
 import 'package:flutter_clean_arc_base/core/utils/response_message.dart';
 import 'package:flutter_clean_arc_base/features/domain/usecases/connectivity/is_connected_usecase.dart';
 
 import '../errors/failure.dart';
 import '../errors/invalid_exception.dart';
-
-abstract class SafeApiCall {
-  Future<Either<Failure, T>> callApi<T>(Future<T> Function() handler);
-}
+import '../params/no_params.dart';
 
 class SafeApiCallImpl extends SafeApiCall {
   final IsConnectedUsecase isConnectedUsecase;
   SafeApiCallImpl({required this.isConnectedUsecase});
 
   @override
-  Future<Either<Failure, T>> callApi<T>(Future<T> Function() handler) async {
+  Future<Either<Failure, T>> call<T>(Future<T> Function() handler) async {
     final result = await isConnectedUsecase.call(NoParams());
     final isConnected = FunctionalResponse.success<bool>(result)!;
     if (isConnected) {

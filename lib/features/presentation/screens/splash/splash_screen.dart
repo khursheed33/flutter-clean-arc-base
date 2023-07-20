@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_arc_base/core/extensions/message_log.dart';
+import 'package:flutter_clean_arc_base/core/widgets/custom_loader.dart';
 import 'package:flutter_clean_arc_base/features/presentation/screens/authentication/authenitication_screen.dart';
 
 import '../../../../core/widgets/app_title.dart';
@@ -21,7 +22,7 @@ class SplashScreen extends StatelessWidget {
         },
         builder: (context, model, _) {
           return Center(
-            child: StreamBuilder<User?>(
+            child: StreamBuilder<String?>(
               stream: model.userStream,
               builder: (ctx, data) {
                 "Stream:: ${data.connectionState} | ${data.data}".log();
@@ -32,6 +33,9 @@ class SplashScreen extends StatelessWidget {
                   //     AppRoutePaths.authentication,
                   //   ),
                   // );
+                  if (data.connectionState == ConnectionState.waiting) {
+                    return const AppCircularProgress();
+                  }
                   return const AuthenticationScreen();
                 } else {
                   if (model.token != null) {

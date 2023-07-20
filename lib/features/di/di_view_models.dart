@@ -5,6 +5,15 @@ import '../presentation/providers/auth_view_model.dart';
 class DiViewModels {
   final GetIt locator;
   DiViewModels({required this.locator}) {
-    locator.registerFactory<AuthViewModel>(() => AuthViewModel());
+    // Authentication ViewModel
+    locator.registerFactory<AuthViewModel>(
+      () => AuthViewModel(
+        createUserUsecase: locator.call(),
+        getTokenUsecase: locator.call(),
+        getUserUsecase: locator.call(),
+        signOutUsecase: locator.call(),
+        signInUsecase: locator.call(),
+      ),
+    );
   }
 }

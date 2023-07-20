@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter_clean_arc_base/core/async/safe_api_repo.dart';
 
 import '../errors/failure.dart';
-import '../utils/safe_api_call.dart';
 
 class SafeApiCallUsecase {
   final SafeApiCall safeApiCall;
@@ -9,7 +9,7 @@ class SafeApiCallUsecase {
 
   Future<Either<Failure, XType>> call<XType>(
       Future<XType> Function() highOrderFun) async {
-    return await safeApiCall.callApi<XType>(
+    return await safeApiCall.call<XType>(
       () async => await highOrderFun(),
     );
   }
