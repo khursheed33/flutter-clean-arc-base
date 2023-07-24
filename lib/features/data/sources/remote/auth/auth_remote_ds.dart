@@ -1,4 +1,4 @@
-import 'package:flutter_clean_arc_base/features/data/models/user/user_model.dart';
+import '../../../models/user/user_model.dart';
 
 import '../../../../domain/entities/user_entity.dart';
 

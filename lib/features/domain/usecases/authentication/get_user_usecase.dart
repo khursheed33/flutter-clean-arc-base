@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_clean_arc_base/features/domain/entities/user_entity.dart';
-import 'package:flutter_clean_arc_base/features/domain/repositories/authentication_repository.dart';
+import '../../entities/user_entity.dart';
+import '../../repositories/authentication_repository.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/usecases/base_usecase.dart';

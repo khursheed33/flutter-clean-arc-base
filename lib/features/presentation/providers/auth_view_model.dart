@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter_clean_arc_base/core/params/sign_in_params.dart';
-import 'package:flutter_clean_arc_base/core/utils/response_message.dart';
-import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/create_user_usecase.dart';
-import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/get_token_usecase.dart';
-import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/get_user_usecase.dart';
-import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/sign_in_usecase.dart';
-import 'package:flutter_clean_arc_base/features/domain/usecases/authentication/sign_out_usecase.dart';
+import '../../../core/params/sign_in_params.dart';
+import '../../../core/utils/response_message.dart';
+import '../../domain/usecases/authentication/create_user_usecase.dart';
+import '../../domain/usecases/authentication/get_token_usecase.dart';
+import '../../domain/usecases/authentication/get_user_usecase.dart';
+import '../../domain/usecases/authentication/sign_in_usecase.dart';
+import '../../domain/usecases/authentication/sign_out_usecase.dart';
 
 import '../../../core/params/no_params.dart';
 import '../base/base_model.dart';

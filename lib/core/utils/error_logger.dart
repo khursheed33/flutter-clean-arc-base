@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:flutter_clean_arc_base/core/extensions/message_log.dart';
-import 'package:flutter_clean_arc_base/core/utils/app_directory.dart';
+import '../extensions/message_log.dart';
+import 'app_directory.dart';
 
 Future<void> logError(dynamic error, StackTrace stackTrace) async {
   try {

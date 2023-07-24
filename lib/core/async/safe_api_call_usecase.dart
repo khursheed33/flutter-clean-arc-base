@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_clean_arc_base/core/async/safe_api_repo.dart';
+import 'safe_api_repo.dart';
 
 import '../errors/failure.dart';
 

@@ -1,4 +1,4 @@
-import 'package:flutter_clean_arc_base/features/domain/entities/user_entity.dart';
+import '../../features/domain/entities/user_entity.dart';
 
 class CreateUserParams extends UserEntity {
   const CreateUserParams({

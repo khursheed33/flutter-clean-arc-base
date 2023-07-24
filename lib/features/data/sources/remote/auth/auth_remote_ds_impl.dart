@@ -1,8 +1,8 @@
-import 'package:flutter_clean_arc_base/core/constants/app_keys.dart';
-import 'package:flutter_clean_arc_base/core/user/current_user.dart';
-import 'package:flutter_clean_arc_base/features/data/models/user/user_model.dart';
-import 'package:flutter_clean_arc_base/features/data/sources/remote/auth/auth_remote_ds.dart';
-import 'package:flutter_clean_arc_base/features/domain/entities/user_entity.dart';
+import '../../../../../core/constants/app_keys.dart';
+import '../../../../../core/user/current_user.dart';
+import '../../../models/user/user_model.dart';
+import 'auth_remote_ds.dart';
+import '../../../../domain/entities/user_entity.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

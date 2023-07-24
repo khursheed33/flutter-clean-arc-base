@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_clean_arc_base/core/params/sign_in_params.dart';
-import 'package:flutter_clean_arc_base/features/domain/repositories/authentication_repository.dart';
+import '../../../../core/params/sign_in_params.dart';
+import '../../repositories/authentication_repository.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/usecases/base_usecase.dart';

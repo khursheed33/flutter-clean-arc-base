@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_clean_arc_base/core/errors/failure.dart';
-import 'package:flutter_clean_arc_base/features/data/models/user/user_model.dart';
-import 'package:flutter_clean_arc_base/features/data/sources/remote/auth/auth_remote_ds.dart';
-import 'package:flutter_clean_arc_base/features/domain/entities/user_entity.dart';
-import 'package:flutter_clean_arc_base/features/domain/repositories/authentication_repository.dart';
+import '../../../core/errors/failure.dart';
+import '../models/user/user_model.dart';
+import '../sources/remote/auth/auth_remote_ds.dart';
+import '../../domain/entities/user_entity.dart';
+import '../../domain/repositories/authentication_repository.dart';
 
 import '../../../core/async/safe_api_repo.dart';
 

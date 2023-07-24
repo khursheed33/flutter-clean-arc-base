@@ -3,9 +3,9 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_clean_arc_base/core/async/safe_api_repo.dart';
-import 'package:flutter_clean_arc_base/core/utils/response_message.dart';
-import 'package:flutter_clean_arc_base/features/domain/usecases/connectivity/is_connected_usecase.dart';
+import 'safe_api_repo.dart';
+import '../utils/response_message.dart';
+import '../../features/domain/usecases/connectivity/is_connected_usecase.dart';
 
 import '../errors/failure.dart';
 import '../errors/invalid_exception.dart';

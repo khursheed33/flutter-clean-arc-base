@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_arc_base/core/extensions/message_log.dart';
-import 'package:flutter_clean_arc_base/core/widgets/custom_loader.dart';
-import 'package:flutter_clean_arc_base/features/presentation/screens/authentication/authenitication_screen.dart';
+import '../../../../core/extensions/message_log.dart';
+import '../../../../core/widgets/custom_loader.dart';
+import '../authentication/authenitication_screen.dart';
 
 import '../../../../core/widgets/app_title.dart';
 import '../../providers/auth_view_model.dart';

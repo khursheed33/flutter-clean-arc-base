@@ -1,10 +1,10 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_clean_arc_base/core/utils/app_directory.dart';
-import 'package:flutter_clean_arc_base/features/di/di_datasources.dart';
-import 'package:flutter_clean_arc_base/features/di/di_repositories.dart';
-import 'package:flutter_clean_arc_base/features/di/di_usecases.dart';
+import '../../core/utils/app_directory.dart';
+import 'di_datasources.dart';
+import 'di_repositories.dart';
+import 'di_usecases.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_clean_arc_base/features/domain/repositories/authentication_repository.dart';
+import '../../repositories/authentication_repository.dart';
 import '../../entities/user_entity.dart';
 
 import '../../../../core/errors/failure.dart';

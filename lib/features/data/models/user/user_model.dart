@@ -1,5 +1,7 @@
-import 'package:flutter_clean_arc_base/features/domain/entities/user_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../../domain/entities/user_entity.dart';
+
 part 'user_model.g.dart';
 
 @JsonSerializable()
