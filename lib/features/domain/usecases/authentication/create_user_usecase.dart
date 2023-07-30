@@ -1,17 +1,17 @@
 import 'package:dartz/dartz.dart';
 import '../../repositories/authentication_repository.dart';
-import '../../entities/user_entity.dart';
+import '../../../../core/params/create_user_params.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/usecases/base_usecase.dart';
 
-class GetLocalUserUsecase extends BaseUsecase<UserEntity, String> {
+class CreateUserUsecase extends BaseUsecase<void, CreateUserParams> {
   final AuthenticationRepository repository;
-  GetLocalUserUsecase({
+  CreateUserUsecase({
     required this.repository,
   });
   @override
-  Future<Either<Failure, UserEntity>> call(params) async {
-    return await repository.getUser(params);
+  Future<Either<Failure, void>> call(params) async {
+    return await repository.createUser(params);
   }
 }

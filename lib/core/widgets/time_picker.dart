@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AppTimePicker extends StatelessWidget {
+class MMTimePicker extends StatelessWidget {
   final Function(TimeOfDay?)? timeHandler;
   final TimeOfDay initialTime;
   final Color? color;
-  const AppTimePicker({
+  const MMTimePicker({
     Key? key,
     required this.timeHandler,
     required this.initialTime,

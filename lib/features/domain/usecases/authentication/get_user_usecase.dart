@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
-import '../../repositories/authentication_repository.dart';
 import '../../entities/user_entity.dart';
+import '../../repositories/authentication_repository.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/usecases/base_usecase.dart';
 
-class GetLocalUserUsecase extends BaseUsecase<UserEntity, String> {
+class GetUserUsecase extends BaseUsecase<UserEntity, String> {
   final AuthenticationRepository repository;
-  GetLocalUserUsecase({
+  GetUserUsecase({
     required this.repository,
   });
   @override
