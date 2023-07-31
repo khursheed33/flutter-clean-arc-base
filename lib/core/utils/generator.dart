@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 
+/// The `Generate` class in Dart provides methods for generating unique IDs and random colors.
 class Generate {
   static String uid() {
     const String pushChars =

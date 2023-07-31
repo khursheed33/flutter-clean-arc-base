@@ -1,14 +1,15 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
+import 'package:get_it/get_it.dart';
+import 'package:hive/hive.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../core/constants/hive_collections.dart';
 import '../../core/utils/app_directory.dart';
 import 'di_datasources.dart';
 import 'di_repositories.dart';
 import 'di_usecases.dart';
-import 'package:get_it/get_it.dart';
-import 'package:hive/hive.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import '../../core/constants/hive_collections.dart';
 import 'di_view_models.dart';
 
 final GetIt locator = GetIt.instance;

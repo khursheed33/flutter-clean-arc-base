@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import '../../repositories/authentication_repository.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/params/no_params.dart';
 import '../../../../core/usecases/base_usecase.dart';
+import '../../repositories/authentication_repository.dart';
 
 class SignOutUsecase extends BaseUsecase<void, NoParams> {
   final AuthenticationRepository repository;

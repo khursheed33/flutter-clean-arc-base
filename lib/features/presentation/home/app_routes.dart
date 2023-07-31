@@ -3,7 +3,10 @@ import 'package:flutter/cupertino.dart';
 import '../screens/splash/splash_screen.dart';
 import 'app_route_paths.dart';
 
-class AppRoutes {
+/// The `AppRoutes` class defines a static method `routes` that returns a `Route` based on the provided
+/// `RouteSettings` name.
+
+abstract class AppRoutes {
   static Route<dynamic>? routes(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutePaths.root:

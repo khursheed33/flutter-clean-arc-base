@@ -2,6 +2,9 @@ import 'package:dartz/dartz.dart';
 
 import '../errors/failure.dart';
 
+/// The `FunctionalResponse` class provides static methods to handle success and failure responses using
+/// the `Either` type.
+
 abstract class FunctionalResponse {
   static String? failure(Either<Failure, void> either) {
     return either.fold((l) => l.message, (r) => null);

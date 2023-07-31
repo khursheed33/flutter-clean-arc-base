@@ -11,6 +11,9 @@ import '../errors/failure.dart';
 import '../errors/invalid_exception.dart';
 import '../params/no_params.dart';
 
+/// The `SafeApiCallImpl` class is an implementation of the `SafeApiCall` interface that handles API
+/// calls with error handling and checks for internet connectivity.
+
 class SafeApiCallImpl extends SafeApiCall {
   final IsConnectedUsecase isConnectedUsecase;
   SafeApiCallImpl({required this.isConnectedUsecase});

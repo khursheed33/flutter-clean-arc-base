@@ -7,6 +7,17 @@ import 'app_providers.dart';
 import 'app_route_paths.dart';
 import 'app_routes.dart';
 
+/// The `appTheme` function returns a `ThemeData` object that defines the color scheme and typography
+/// for the Flutter application.
+///
+/// Args:
+///   context (BuildContext): The `context` parameter is a required parameter in the `appTheme`
+/// function. It is of type `BuildContext` and represents the current build context of the widget tree.
+/// It is used to access the theme data and other resources from the widget tree.
+///
+/// Returns:
+///   The `appTheme` function returns a `ThemeData` object.
+
 class AppFoundation extends StatelessWidget {
   const AppFoundation({Key? key}) : super(key: key);
 

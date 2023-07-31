@@ -1,3 +1,9 @@
+/// The `AppValidator` class in Dart provides various static methods for validating different types of
+/// input fields such as name, email, password, mobile number, address, pin code, state, city, services,
+/// GST number, company name, bank name, bank account number, and IFSC code.
+/// The `AppValidator` class in Dart provides various static methods for validating different types of
+/// input fields such as name, email, password, mobile number, address, pin code, state, city, services,
+/// GST number, company name, bank name, bank account number, and IFSC code.
 class AppValidator {
   static bool isValidName(String name) {
     final pattern = RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]');

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+
+import '../../../../core/widgets/app_title.dart';
 import '../../base/base_view_model.dart';
 import '../../home/app_route_paths.dart';
 import '../../providers/auth_view_model.dart';
-
-import '../../../../core/widgets/app_title.dart';
 
 /// Authentication Screen with Form and validation
 class AuthenticationScreen extends StatelessWidget {

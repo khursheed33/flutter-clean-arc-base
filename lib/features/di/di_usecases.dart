@@ -1,3 +1,6 @@
+import 'package:get_it/get_it.dart';
+
+import '../../core/async/safe_api_call_usecase.dart';
 import '../domain/usecases/authentication/create_user_usecase.dart';
 import '../domain/usecases/authentication/get_token_usecase.dart';
 import '../domain/usecases/authentication/get_user_usecase.dart';
@@ -5,9 +8,6 @@ import '../domain/usecases/authentication/sign_in_usecase.dart';
 import '../domain/usecases/authentication/sign_out_usecase.dart';
 import '../domain/usecases/connectivity/is_connected_usecase.dart';
 import '../domain/usecases/shared/get_user_usecase.dart';
-import 'package:get_it/get_it.dart';
-
-import '../../core/async/safe_api_call_usecase.dart';
 
 /// `DiRepositories` class responsible to register and inject all types of repositories and their implementations.
 
