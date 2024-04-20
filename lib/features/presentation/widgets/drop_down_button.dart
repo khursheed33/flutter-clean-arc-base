@@ -105,8 +105,9 @@ class _AppDropdownState extends State<AppDropdown> {
                 isDismissible: false,
                 context: context,
                 builder: (ctx) {
-                  return WillPopScope(
-                    onWillPop: () => selectOneOption(ctx),
+                  return PopScope(
+                    canPop: false,
+                    onPopInvoked: (val) => selectOneOption(ctx),
                     child: Container(
                       constraints: BoxConstraints(
                         maxHeight: widget.items.length * 60.0 +

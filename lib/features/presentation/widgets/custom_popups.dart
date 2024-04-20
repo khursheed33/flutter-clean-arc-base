@@ -8,6 +8,7 @@ class CustomPopup {
     String? confirmBtnTitle,
     IconData? icon,
     bool? isError,
+    bool canPop = false,
     bool? needCancel,
   }) async {
     return await showDialog<bool>(
@@ -18,10 +19,9 @@ class CustomPopup {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          child: WillPopScope(
-            onWillPop: () {
-              return Future.value(false);
-            },
+          child: PopScope(
+            canPop: canPop,
+            onPopInvoked: (didPop) {},
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(

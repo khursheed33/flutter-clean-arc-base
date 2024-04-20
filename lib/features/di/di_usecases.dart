@@ -1,3 +1,6 @@
+import 'package:flutter_clean_arc_base/features/domain/usecases/preferences/create_user_preferences_usecase.dart';
+import 'package:flutter_clean_arc_base/features/domain/usecases/preferences/get_user_preferences_usecase.dart';
+import 'package:flutter_clean_arc_base/features/domain/usecases/preferences/update_user_preferences_usecase.dart';
 import 'package:flutter_clean_arc_base/index.dart';
 
 /// `DiRepositories` class responsible to register and inject all types of repositories and their implementations.
@@ -46,8 +49,20 @@ class DiUsecases {
       ),
     );
     // Get Token Usecase
-    locator.registerLazySingleton<GetTokenUsecase>(
-      () => GetTokenUsecase(
+    locator.registerLazySingleton<CreateUserPreferencesUsecase>(
+      () => CreateUserPreferencesUsecase(
+        repository: locator.call(),
+      ),
+    );
+    // Get Token Usecase
+    locator.registerLazySingleton<UpdateUserPreferencesUsecase>(
+      () => UpdateUserPreferencesUsecase(
+        repository: locator.call(),
+      ),
+    );
+    // Get Token Usecase
+    locator.registerLazySingleton<GetUserPreferencesUsecase>(
+      () => GetUserPreferencesUsecase(
         repository: locator.call(),
       ),
     );

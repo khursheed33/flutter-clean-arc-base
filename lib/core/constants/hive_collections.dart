@@ -3,5 +3,5 @@ abstract class HiveCollections {
 }
 
 abstract class HiveKeys {
-  static const String teacherEntity = "USER_ENTITY";
+  static const String userPreferences = "USER_PREFERENCES";
 }

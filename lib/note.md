@@ -2,7 +2,7 @@
 
 <!-- Build Run to Generate From Json and To Json -->
 
-flutter packages pub run build_runner build --delete-conflicting-outputs
+dart run build_runner build --delete-conflicting-outputs
 
 <!-- Generate Splash Icons  -->
 flutter pub run flutter_native_splash:create

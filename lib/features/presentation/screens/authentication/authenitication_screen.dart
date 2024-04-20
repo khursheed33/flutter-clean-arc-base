@@ -6,29 +6,38 @@ class AuthenticationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView<AuthViewModel>(
-      builder: (context, model, _) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Center(
-              child: AppTitle("Authentication"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                model.logout();
-                Navigator.of(context).pushReplacementNamed(
-                  AppRoutePaths.root,
-                );
-              },
-              child: const AppTitle(
-                "Log out",
-                color: Colors.black,
+    return Scaffold(
+      body: BaseView<AuthViewModel>(
+        builder: (context, model, _) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Center(
+                child: AppTitle("Authentication"),
               ),
-            )
-          ],
-        );
-      },
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed(
+                    AppRoutePaths.root,
+                  );
+                },
+                child: const AppTitle(
+                  "Log out",
+                  color: Colors.black,
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  model.setAppTheme(Brightness.dark);
+                },
+                child: const AppTitle(
+                  "Toggle",
+                ),
+              )
+            ],
+          );
+        },
+      ),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter_clean_arc_base/index.dart';
 
-
 /// `GenricDropDown<T>`
 /// is a custom Dropdown button that supports `T` type of object in it's dropdown items.
 /// Returns a Dropdown items from list of `objects/entities/models`.
@@ -122,8 +121,9 @@ class GenricDropDownState<T> extends State<GenricDropDown<T>> {
                     isDismissible: false,
                     context: context,
                     builder: (ctx) {
-                      return WillPopScope(
-                        onWillPop: () => selectOneOption(),
+                      return PopScope(
+                        canPop: false,
+                        onPopInvoked: (falg) => selectOneOption(),
                         child: Container(
                           constraints: BoxConstraints(
                             maxHeight: widget.items.length * 60.0,

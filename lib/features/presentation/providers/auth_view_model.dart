@@ -1,68 +1,54 @@
 import 'package:flutter_clean_arc_base/index.dart';
 
-
-
 class AuthViewModel extends BaseModel {
-  final CreateUserUsecase createUserUsecase;
-  final GetTokenUsecase getTokenUsecase;
-  final GetUserUsecase getUserUsecase;
-  final SignOutUsecase signOutUsecase;
-  final SignInUsecase signInUsecase;
-  String? _token;
+  ThemeData _appTheme = ThemeData();
+  // Getter for appTheme
+  ThemeData get appTheme => _appTheme;
 
-  AuthViewModel({
-    required this.createUserUsecase,
-    required this.getTokenUsecase,
-    required this.signOutUsecase,
-    required this.getUserUsecase,
-    required this.signInUsecase,
-  });
-
-  String? get token => _token;
-
-  setToken(String? newToken) {
-    _token = newToken;
-    notifyListeners();
-  }
-
-  Future<String?> isTokenExists() async {
-    final response = await getTokenUsecase.call(NoParams());
-    if (response.isRight()) {
-      final token = FunctionalResponse.success<String?>(response);
-      setToken(token);
+  // Method to set the app theme
+  void setAppTheme(Brightness brightness) {
+    if (brightness == Brightness.light) {
+      _preferencesController.add(ThemeData.light());
+      return;
     }
-    return null;
+    _appTheme = newAppTheme(brightness);
+    _preferencesController.add(_appTheme);
   }
 
-  final _userController = StreamController<String?>.broadcast();
-  Stream<String?> get userStream => _userController.stream;
+  // Declare a StreamController for your preferences
+  final StreamController<ThemeData> _preferencesController =
+      StreamController<ThemeData>.broadcast();
 
-  Future<void> login() async {
-    // Save the auth token to shared preferences
-    final singInParam = SignInParams(
-      username: "khursheed33",
-      password: "12345",
+  // Expose the stream to be listened to
+  Stream<ThemeData> get preferencesStream => _preferencesController.stream;
+
+  Future<void> getPreferences() async {
+    // setViewState(ViewState.Loading);
+    Future.delayed(const Duration(seconds: 2), () {
+      // setViewState(ViewState.Done);
+      setAppTheme(Brightness.light);
+    });
+  }
+
+  ThemeData newAppTheme(Brightness brightness) {
+    Color? primaryColor =
+        brightness == Brightness.light ? Colors.teal : Colors.blue;
+    Color? primaryColorDark =
+        brightness == Brightness.light ? Colors.teal[900] : Colors.blue[900];
+    Color? primaryColorLight =
+        brightness == Brightness.light ? Colors.teal[300] : Colors.blue[300];
+    Color textColor =
+        brightness == Brightness.light ? Colors.teal : Colors.white;
+
+    ColorScheme colorScheme = ColorScheme.fromSwatch().copyWith(
+      brightness: brightness,
+      background:
+          brightness == Brightness.light ? Colors.white : Colors.grey[900],
     );
 
-    final response = await signInUsecase.call(singInParam);
-
-    if (response.isRight()) {
-      final token = FunctionalResponse.success<String?>(response);
-      setToken(token);
-      _userController.sink.add(token);
-    }
-  }
-
-  Future<void> logout() async {
-    final response = await signOutUsecase.call(NoParams());
-    if (response.isRight()) {
-      // Emit null to indicate user is logged out
-      _userController.sink.add(null);
-    }
+    return ThemeData.dark();
   }
 
   @override
-  void disposeModel() {
-    _userController.close();
-  }
+  void disposeModel() {}
 }
