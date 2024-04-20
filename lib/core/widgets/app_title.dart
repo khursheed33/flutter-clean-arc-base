@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import '../enums/font_type.dart';
 
 class AppTitle extends StatelessWidget {
   final String title;
@@ -14,7 +13,7 @@ class AppTitle extends StatelessWidget {
   final TextOverflow? overflow;
   const AppTitle(
     this.title, {
-    Key? key,
+    super.key,
     this.color,
     this.fontSize,
     this.maxLines,
@@ -23,7 +22,7 @@ class AppTitle extends StatelessWidget {
     this.fontFamily,
     this.fontWeight,
     this.letterSpacing,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

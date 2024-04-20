@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppContainerWithBG extends StatelessWidget {
   final Widget child;
@@ -15,7 +15,7 @@ class AppContainerWithBG extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   const AppContainerWithBG({
-    Key? key,
+    super.key,
     required this.child,
     this.color,
     this.radius,
@@ -29,7 +29,7 @@ class AppContainerWithBG extends StatelessWidget {
     this.marginHorizontal,
     this.maxWidth,
     this.maxHeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-import '../../features/domain/entities/user_entity.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 /// The `CreateUserParams` class extends the `UserEntity` class and requires specific parameters for
 /// creating a user.

@@ -1,9 +1,5 @@
 import 'package:dartz/dartz.dart';
-
-import '../../../../core/errors/failure.dart';
-import '../../../../core/params/no_params.dart';
-import '../../../../core/usecases/base_usecase.dart';
-import '../../repositories/authentication_repository.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class GetTokenUsecase extends BaseUsecase<String?, NoParams> {
   final AuthenticationRepository repository;

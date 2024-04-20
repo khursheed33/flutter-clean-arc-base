@@ -1,15 +1,5 @@
-import 'dart:async';
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
-import 'package:flutter/widgets.dart';
-import 'safe_api_repo.dart';
-import '../utils/response_message.dart';
-import '../../features/domain/usecases/connectivity/is_connected_usecase.dart';
-
-import '../errors/failure.dart';
-import '../errors/invalid_exception.dart';
-import '../params/no_params.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 /// The `SafeApiCallImpl` class is an implementation of the `SafeApiCall` interface that handles API
 /// calls with error handling and checks for internet connectivity.

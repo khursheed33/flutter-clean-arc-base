@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
-import '../screens/splash/splash_screen.dart';
-import 'app_route_paths.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 /// The `AppRoutes` class defines a static method `routes` that returns a `Route` based on the provided
 /// `RouteSettings` name.

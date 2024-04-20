@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppDropdown extends StatefulWidget {
   final List<dynamic> items;
@@ -14,7 +14,7 @@ class AppDropdown extends StatefulWidget {
 
   // final dynamic currentItem;
   const AppDropdown({
-    Key? key,
+    super.key,
     this.fontColor,
     this.indexHandler,
     this.addItemHandler,
@@ -25,7 +25,7 @@ class AppDropdown extends StatefulWidget {
     required this.items,
     required this.dropValHandler,
     required this.initialItem,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _AppDropdownState();

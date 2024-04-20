@@ -1,14 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import '../errors/error_message.dart';
-import 'app_title.dart';
 
 class AppRetryOnNoInternet extends StatelessWidget {
   final Function()? onRetry;
   const AppRetryOnNoInternet({
-    Key? key,
+    super.key,
     this.onRetry,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class ResourceNotFound extends StatelessWidget {
   final String title;
@@ -6,12 +6,11 @@ class ResourceNotFound extends StatelessWidget {
   final Color? textColor;
   final double iconSize;
   const ResourceNotFound(
-      {Key? key,
+      {super.key,
       required this.title,
       this.icon,
       this.iconSize = 30,
-      this.textColor})
-      : super(key: key);
+      this.textColor});
 
   @override
   Widget build(BuildContext context) {

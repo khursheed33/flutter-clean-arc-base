@@ -1,8 +1,5 @@
 import 'package:dartz/dartz.dart';
-import '../../repositories/connectivity_repository.dart';
-import '../../../../core/errors/failure.dart';
-import '../../../../core/params/no_params.dart';
-import '../../../../core/usecases/base_usecase.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class IsConnectedUsecase extends BaseUsecase<bool, NoParams> {
   final ConnectivityRepository repository;

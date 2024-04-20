@@ -1,6 +1,5 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import 'connectivity_local_ds.dart';
 
 class ConnectivityLocalDatasourceImpl implements ConnectivityLocalDatasource {
   final Connectivity connectivity;

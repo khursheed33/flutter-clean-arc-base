@@ -1,6 +1,5 @@
-import '../../../models/user/user_model.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import '../../../../domain/entities/user_entity.dart';
 
 abstract class AuthenticationRemoteDatasource {
   /// Get current user token from the local storage.

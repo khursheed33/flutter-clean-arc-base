@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class MMTimePicker extends StatelessWidget {
   final Function(TimeOfDay?)? timeHandler;
   final TimeOfDay initialTime;
   final Color? color;
   const MMTimePicker({
-    Key? key,
+    super.key,
     required this.timeHandler,
     required this.initialTime,
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

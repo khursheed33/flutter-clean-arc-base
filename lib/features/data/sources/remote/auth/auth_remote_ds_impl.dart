@@ -1,10 +1,4 @@
-import '../../../../../core/constants/app_keys.dart';
-import '../../../../../core/user/current_user.dart';
-import '../../../models/user/user_model.dart';
-import 'auth_remote_ds.dart';
-import '../../../../domain/entities/user_entity.dart';
-import 'package:hive/hive.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AuthRemoteDatasourceImpl implements AuthenticationRemoteDatasource {
   final Box hiveBox;

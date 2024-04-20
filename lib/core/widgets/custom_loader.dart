@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppCircularProgress extends StatelessWidget {
   final double? size;
   final Color? color;
   final bool needElevation;
   const AppCircularProgress({
-    Key? key,
+    super.key,
     this.size,
     this.color,
     this.needElevation = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

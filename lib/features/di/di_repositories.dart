@@ -1,8 +1,4 @@
-import '../data/repositories/authentication_repo_impl.dart';
-import '../data/repositories/connectivity_repo_impl.dart';
-import '../domain/repositories/authentication_repository.dart';
-import '../domain/repositories/connectivity_repository.dart';
-import 'package:get_it/get_it.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 /// `DiRepositories` class responsible to register and inject all types of repositories and their implementations.
 

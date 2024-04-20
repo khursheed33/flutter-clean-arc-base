@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppBackButton extends StatelessWidget {
   final Color? color;
   final EdgeInsetsGeometry? margin;
   const AppBackButton({
-    Key? key,
+    super.key,
     this.color,
     this.margin,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

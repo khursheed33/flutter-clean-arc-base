@@ -1,9 +1,5 @@
 import 'package:dartz/dartz.dart';
-import '../../repositories/authentication_repository.dart';
-import '../../../../core/params/create_user_params.dart';
-
-import '../../../../core/errors/failure.dart';
-import '../../../../core/usecases/base_usecase.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class CreateUserUsecase extends BaseUsecase<void, CreateUserParams> {
   final AuthenticationRepository repository;

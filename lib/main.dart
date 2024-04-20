@@ -1,8 +1,4 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
-import 'core/utils/error_logger.dart';
-import 'features/di/di_container.dart';
-import 'features/presentation/home/app_foundation.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 /// The main function initializes dependencies, starts the app, and logs any errors that occur.
 Future<void> main() async {

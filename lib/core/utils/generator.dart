@@ -1,6 +1,5 @@
-import 'dart:math';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import 'package:flutter/cupertino.dart';
 
 /// The `Generate` class in Dart provides methods for generating unique IDs and random colors.
 class Generate {

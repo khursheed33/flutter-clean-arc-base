@@ -1,15 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import 'app_title.dart';
 
 class MMContentTitleWitDivider extends StatelessWidget {
   final String title;
   final double? leftPadding;
   const MMContentTitleWitDivider({
-    Key? key,
+    super.key,
     required this.title,
     this.leftPadding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

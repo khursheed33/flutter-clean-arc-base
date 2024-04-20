@@ -1,8 +1,5 @@
 import 'package:dartz/dartz.dart';
-
-import '../../../core/errors/failure.dart';
-import '../../domain/repositories/connectivity_repository.dart';
-import '../sources/local/connectivity/connectivity_local_ds.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class ConnectivityRepositoryImpl implements ConnectivityRepository {
   final ConnectivityLocalDatasource datasource;

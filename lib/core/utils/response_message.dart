@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
-
-import '../errors/failure.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 /// The `FunctionalResponse` class provides static methods to handle success and failure responses using
 /// the `Either` type.

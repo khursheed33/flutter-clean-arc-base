@@ -1,6 +1,4 @@
-import 'package:json_annotation/json_annotation.dart';
-
-import '../../../domain/entities/user_entity.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 part 'user_model.g.dart';
 

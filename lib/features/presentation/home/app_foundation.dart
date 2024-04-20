@@ -1,11 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import '../../../../core/constants/app_text.dart';
-import '../../../../core/enums/font_type.dart';
-import 'app_providers.dart';
-import 'app_route_paths.dart';
-import 'app_routes.dart';
 
 /// The `appTheme` function returns a `ThemeData` object that defines the color scheme and typography
 /// for the Flutter application.
@@ -19,7 +13,7 @@ import 'app_routes.dart';
 ///   The `appTheme` function returns a `ThemeData` object.
 
 class AppFoundation extends StatelessWidget {
-  const AppFoundation({Key? key}) : super(key: key);
+  const AppFoundation({super.key});
 
   @override
   Widget build(BuildContext context) {

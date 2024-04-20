@@ -1,7 +1,8 @@
-import 'package:flutter/services.dart';
-
 /// The `InputFormatter` class provides static methods to create lists of `TextInputFormatter` objects
 /// for filtering input to allow text and numbers, numbers only, or text only.
+library;
+
+import 'package:flutter_clean_arc_base/index.dart';
 
 class InputFormatter {
   static List<TextInputFormatter> textAndNumberOnly() {

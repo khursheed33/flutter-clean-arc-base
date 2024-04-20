@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppRichText extends StatelessWidget {
   final String? label;
@@ -12,7 +12,7 @@ class AppRichText extends StatelessWidget {
   final FontWeight? valueFontWeight;
 
   const AppRichText({
-    Key? key,
+    super.key,
     required this.value,
     this.label,
     this.labelColor,
@@ -22,7 +22,7 @@ class AppRichText extends StatelessWidget {
     this.postFixText,
     this.labelFontWeight,
     this.valueFontWeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

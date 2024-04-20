@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import 'app_title.dart';
 
 class AppTitleWithBG extends StatelessWidget {
   final Color? bgColor;
@@ -8,12 +7,12 @@ class AppTitleWithBG extends StatelessWidget {
   final double? fontSize;
   final AlignmentGeometry? textAlign;
   const AppTitleWithBG({
-    Key? key,
+    super.key,
     this.bgColor,
     this.fontSize,
     this.textAlign,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

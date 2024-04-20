@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../../../core/widgets/app_title.dart';
-import '../../base/base_view_model.dart';
-import '../../home/app_route_paths.dart';
-import '../../providers/auth_view_model.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 /// Authentication Screen with Form and validation
 class AuthenticationScreen extends StatelessWidget {
@@ -26,7 +21,10 @@ class AuthenticationScreen extends StatelessWidget {
                   AppRoutePaths.root,
                 );
               },
-              child: const AppTitle("Log out"),
+              child: const AppTitle(
+                "Log out",
+                color: Colors.black,
+              ),
             )
           ],
         );

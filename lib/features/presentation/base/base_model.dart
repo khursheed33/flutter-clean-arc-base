@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import '../../../core/enums/view_state.dart';
 
 /// An abstract class that serves as the base for ViewModel classes.
 ///

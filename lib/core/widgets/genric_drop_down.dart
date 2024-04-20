@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import 'app_title.dart';
 
 /// `GenricDropDown<T>`
 /// is a custom Dropdown button that supports `T` type of object in it's dropdown items.
@@ -26,7 +25,7 @@ class GenricDropDown<T> extends StatefulWidget {
   final Widget? title;
 
   const GenricDropDown({
-    Key? key,
+    super.key,
     this.indexHandler,
     required this.items,
     required this.onChanged,
@@ -34,7 +33,7 @@ class GenricDropDown<T> extends StatefulWidget {
     required this.titleHandler,
     this.backgroundColor,
     this.title,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() {

@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import '../constants/app_graphics.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppHeaderWithImage extends StatelessWidget {
   final String? assetName;
@@ -9,12 +6,12 @@ class AppHeaderWithImage extends StatelessWidget {
   final double? width;
   final BoxFit? boxFit;
   const AppHeaderWithImage({
-    Key? key,
+    super.key,
     this.assetName,
     this.height,
     this.boxFit,
     this.width,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

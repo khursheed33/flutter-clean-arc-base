@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 ScaffoldFeatureController<MaterialBanner, MaterialBannerClosedReason>
     showBanner(

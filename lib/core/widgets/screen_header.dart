@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppScreenHeader extends StatelessWidget {
   final IconData icon;
   final double? paddingTop;
   const AppScreenHeader({
-    Key? key,
+    super.key,
     this.paddingTop,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

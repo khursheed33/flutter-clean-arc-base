@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import 'custom_loader.dart';
 
 class AppNextButtonCircle extends StatelessWidget {
   final Color? backgroundColor;
@@ -8,12 +7,12 @@ class AppNextButtonCircle extends StatelessWidget {
   final Function()? onPressed;
   final bool isBusy;
   const AppNextButtonCircle({
-    Key? key,
+    super.key,
     this.backgroundColor,
     this.iconColor,
     this.isBusy = false,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

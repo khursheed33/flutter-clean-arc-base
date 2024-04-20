@@ -1,6 +1,7 @@
-import 'package:equatable/equatable.dart';
-
 /// The UserEntity class represents a user with properties such as name, surname, username, and email.
+library;
+
+import 'package:flutter_clean_arc_base/index.dart';
 
 class UserEntity extends Equatable {
   final String name;

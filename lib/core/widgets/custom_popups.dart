@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../constants/app_text.dart';
-import 'app_title.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class CustomPopup {
   static Future<bool?> common(

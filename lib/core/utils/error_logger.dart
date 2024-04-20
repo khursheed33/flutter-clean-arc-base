@@ -1,7 +1,5 @@
-import 'dart:io';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import '../extensions/message_log.dart';
-import 'app_directory.dart';
 
 /// The function logs an error message and stack trace to a file.
 ///

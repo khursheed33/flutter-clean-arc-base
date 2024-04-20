@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppInputForm extends StatelessWidget {
   const AppInputForm({
-    Key? key,
+    super.key,
     this.passwordVisiblityHandler,
     this.isPasswordVisible,
     this.obscured = false,
@@ -25,7 +24,7 @@ class AppInputForm extends StatelessWidget {
     this.minLines,
     this.validator,
     this.textAlign,
-  }) : super(key: key);
+  });
   final int? maxLines;
   final bool obscured;
   final int? minLines;

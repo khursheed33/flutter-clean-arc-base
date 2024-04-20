@@ -1,6 +1,5 @@
-import 'package:get_it/get_it.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import '../presentation/providers/auth_view_model.dart';
 
 class DiViewModels {
   final GetIt locator;

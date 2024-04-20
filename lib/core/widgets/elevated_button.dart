@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppElevatedButton extends StatelessWidget {
   final Color? color;
@@ -17,7 +17,7 @@ class AppElevatedButton extends StatelessWidget {
   final FontWeight? fontWeight;
   final Function() onPressHandler;
   const AppElevatedButton({
-    Key? key,
+    super.key,
     this.icon,
     this.color,
     this.radius,
@@ -33,7 +33,7 @@ class AppElevatedButton extends StatelessWidget {
     this.isProgress = false,
     this.lightBorder = false,
     required this.onPressHandler,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,7 @@
-import 'package:flutter/material.dart';
-import '../../../../core/extensions/message_log.dart';
-import '../../../../core/widgets/custom_loader.dart';
-import '../authentication/authenitication_screen.dart';
-
-import '../../../../core/widgets/app_title.dart';
-import '../../providers/auth_view_model.dart';
-import '../../base/base_view_model.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +14,9 @@ class SplashScreen extends StatelessWidget {
           model.disposeModel();
         },
         builder: (context, model, _) {
+          if (1 == 1) {
+            return const AuthenticationScreen();
+          }
           return Center(
             child: StreamBuilder<String?>(
               stream: model.userStream,

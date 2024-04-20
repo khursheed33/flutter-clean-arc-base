@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class AppLinearProgressBar extends StatelessWidget {
-  const AppLinearProgressBar({Key? key}) : super(key: key);
+  const AppLinearProgressBar({super.key});
 
   @override
   Widget build(BuildContext context) {

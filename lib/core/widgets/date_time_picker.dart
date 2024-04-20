@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 import 'package:intl/intl.dart';
-
-import '../constants/constants.dart';
-import 'app_title.dart';
-import 'container_with_bg.dart';
 
 class MMDateTimePicker extends StatelessWidget {
   final Function(DateTime dateTime)? pickedDateHandler;
@@ -24,7 +20,7 @@ class MMDateTimePicker extends StatelessWidget {
   final Color? bgColor;
 
   const MMDateTimePicker({
-    Key? key,
+    super.key,
     required this.pickedDateHandler,
     required this.selectedDate,
     this.initialDate,
@@ -41,7 +37,7 @@ class MMDateTimePicker extends StatelessWidget {
     this.margin,
     this.radius,
     this.dateFormat,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

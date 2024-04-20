@@ -1,9 +1,5 @@
 import 'package:dartz/dartz.dart';
-import '../../../../core/params/sign_in_params.dart';
-import '../../repositories/authentication_repository.dart';
-
-import '../../../../core/errors/failure.dart';
-import '../../../../core/usecases/base_usecase.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 class SignInUsecase extends BaseUsecase<String, SignInParams> {
   final AuthenticationRepository repository;

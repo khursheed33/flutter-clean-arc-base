@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
-import 'app_title.dart';
 
 class AppCreateNewButton extends StatelessWidget {
   final Function()? onPressed;
@@ -14,7 +12,7 @@ class AppCreateNewButton extends StatelessWidget {
   final double? iconSize;
 
   const AppCreateNewButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.title,
     this.icon,
@@ -23,7 +21,7 @@ class AppCreateNewButton extends StatelessWidget {
     this.fontSize,
     this.fontWeight,
     this.iconSize,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

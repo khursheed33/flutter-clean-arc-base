@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../../di/di_container.dart';
-import 'base_model.dart';
+import 'package:flutter_clean_arc_base/index.dart';
 
 /// A generic StatefulWidget that serves as the base for building views with state management support.
 ///
@@ -30,11 +26,11 @@ class BaseView<VM extends BaseModel> extends StatefulWidget {
   ///
   /// The [onModelDispose] parameter is an optional callback that is called when the ViewModel [VM] is about to be disposed.
   const BaseView({
-    Key? key,
+    super.key,
     this.onModelReady,
     this.onModelDispose,
     required this.builder,
-  }) : super(key: key);
+  });
 
   /// A callback function that is called when the ViewModel [VM] is created and ready.
   final Function(VM)? onModelReady;
