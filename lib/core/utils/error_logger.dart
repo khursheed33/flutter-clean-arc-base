@@ -1,6 +1,5 @@
 import 'package:flutter_clean_arc_base/index.dart';
 
-
 /// The function logs an error message and stack trace to a file.
 ///
 /// Args:
@@ -12,7 +11,7 @@ import 'package:flutter_clean_arc_base/index.dart';
 Future<void> logError(dynamic error, StackTrace stackTrace) async {
   try {
     final errorMessage = 'Error: $error\nStack trace:\n$stackTrace';
-    final String appDocDir = await getAppDir();
+    final String appDocDir = await getSupportDir();
     "Dir:: $appDocDir".log();
     final logFile = File('$appDocDir/error.log');
     await logFile.writeAsString(errorMessage, mode: FileMode.append);

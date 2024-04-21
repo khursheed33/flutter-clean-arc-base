@@ -4,8 +4,11 @@ import 'package:flutter_clean_arc_base/index.dart';
 
 abstract class AppProviders {
   static List<SingleChildWidget> appProviders = [
-    ChangeNotifierProvider(
+    ChangeNotifierProvider<AuthViewModel>(
       create: (_) => locator<AuthViewModel>(),
+    ),
+    ChangeNotifierProvider<AppPreferencesViewModel>(
+      create: (_) => locator<AppPreferencesViewModel>(),
     ),
   ];
 }

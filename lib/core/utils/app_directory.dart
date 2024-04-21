@@ -5,7 +5,7 @@ import 'package:path_provider/path_provider.dart';
 ///
 /// Returns:
 ///   a `Future<String>`, which means it will eventually return a `String` value.
-Future<String> getAppDir() async {
-  final dir = await getApplicationDocumentsDirectory();
+Future<String> getSupportDir() async {
+  final dir = await getApplicationSupportDirectory();
   return dir.path;
 }

@@ -6,4 +6,5 @@ import 'package:flutter_clean_arc_base/index.dart';
 
 abstract class SafeApiCall {
   Future<Either<Failure, T>> call<T>(Future<T> Function() handler);
+  Stream<Either<Failure, T>> callStream<T>(Stream<T> Function() handler);
 }

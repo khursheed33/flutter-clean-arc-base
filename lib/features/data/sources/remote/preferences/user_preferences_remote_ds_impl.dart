@@ -25,11 +25,13 @@ class UserPreferencesRemoteDatasourceImpl
   }
 
   @override
-  Future<UserPreferencesEntity> getUserPreferences(String userId) async {
+  Future<UserPreferencesEntity?> getUserPreferences(String userId) async {
     final res =
-        await _hiveBox.get(HiveKeys.userPreferences) as Map<String, dynamic>;
-
-    final userPrefModel = UserPreferencesModel.fromJson(res);
+        await _hiveBox.get(HiveKeys.userPreferences) as Map<dynamic, dynamic>?;
+    if (res == null) {
+      return null;
+    }
+    final userPrefModel = UserPreferencesModel.fromJson(Map.from(res));
 
     return userPrefModel;
   }
@@ -49,5 +51,11 @@ class UserPreferencesRemoteDatasourceImpl
 
     await _hiveBox.put(HiveKeys.userPreferences, userPrefJson);
     return userPreferencesEntity;
+  }
+
+  @override
+  Stream<UserPreferencesEntity?> getPreferencesStream(String userId) async* {
+    final prefs = await getUserPreferences(userId);
+    yield prefs;
   }
 }

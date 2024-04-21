@@ -111,3 +111,8 @@ export 'package:flutter_clean_arc_base/features/domain/entities/user_preferences
 export 'package:flutter_clean_arc_base/core/enums/language_type.dart';
 export 'package:flutter_clean_arc_base/core/enums/theme_type.dart';
 export 'package:flutter_clean_arc_base/features/data/sources/remote/preferences/user_preferences_remote_ds.dart';
+export 'package:flutter_clean_arc_base/features/presentation/providers/preferences_view_model.dart';
+export 'package:flutter_clean_arc_base/features/domain/usecases/preferences/get_user_preferences_usecase.dart';
+export 'package:flutter_clean_arc_base/features/domain/usecases/preferences/create_user_preferences_usecase.dart';
+export 'package:flutter_clean_arc_base/features/domain/usecases/preferences/update_user_preferences_usecase.dart';
+export 'package:flutter_clean_arc_base/features/domain/usecases/preferences/get_user_preferences_stream_usecase.dart';

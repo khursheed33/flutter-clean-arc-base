@@ -6,7 +6,7 @@ class AppElevatedButton extends StatelessWidget {
   final double? radius;
   final IconData? icon;
   final bool? iconRight;
-  final bool isProgress;
+  final bool isLoading;
   final bool darkBorder;
   final double? iconSize;
   final Color? textColor;
@@ -15,7 +15,7 @@ class AppElevatedButton extends StatelessWidget {
   final bool lightBorder;
   final Color? borderColor;
   final FontWeight? fontWeight;
-  final Function() onPressHandler;
+  final Function() onPressed;
   const AppElevatedButton({
     super.key,
     this.icon,
@@ -30,9 +30,9 @@ class AppElevatedButton extends StatelessWidget {
     this.elevation = 0.0,
     this.iconRight = false,
     this.darkBorder = false,
-    this.isProgress = false,
+    this.isLoading = false,
     this.lightBorder = false,
-    required this.onPressHandler,
+    required this.onPressed,
   });
 
   @override
@@ -43,11 +43,11 @@ class AppElevatedButton extends StatelessWidget {
       child: MaterialButton(
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         onPressed: () {
-          if (isProgress) return;
-          onPressHandler();
+          if (isLoading) return;
+          onPressed();
         },
         elevation: elevation,
-        color: isProgress
+        color: isLoading
             ? Theme.of(context).disabledColor
             : color ?? Theme.of(context).primaryColor,
         shape: RoundedRectangleBorder(
@@ -69,7 +69,7 @@ class AppElevatedButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (icon != null && !isProgress && iconRight == false)
+            if (icon != null && !isLoading && iconRight == false)
               Padding(
                 padding: const EdgeInsets.only(right: 5),
                 child: Icon(
@@ -78,7 +78,7 @@ class AppElevatedButton extends StatelessWidget {
                   size: iconSize ?? (fontSize != null ? fontSize! + 5.0 : 20),
                 ),
               ),
-            if (isProgress)
+            if (isLoading)
               Container(
                 height: 30,
                 width: 50,
@@ -102,9 +102,9 @@ class AppElevatedButton extends StatelessWidget {
                 color: textColor ?? Theme.of(context).canvasColor,
               ),
             ),
-            if (icon != null && !isProgress && iconRight == true)
+            if (icon != null && !isLoading && iconRight == true)
               const SizedBox(width: 10),
-            if (icon != null && !isProgress && iconRight == true)
+            if (icon != null && !isLoading && iconRight == true)
               Padding(
                 padding: const EdgeInsets.only(right: 5),
                 child: Icon(

@@ -20,9 +20,9 @@ class UserPreferencesRepositoryImpl implements UserPreferencesRepository {
   }
 
   @override
-  Future<Either<Failure, UserPreferencesEntity>> getUserPreferences(
+  Future<Either<Failure, UserPreferencesEntity?>> getUserPreferences(
       String userId) async {
-    return await _safeApiCall.call<UserPreferencesEntity>(
+    return await _safeApiCall.call<UserPreferencesEntity?>(
       () => _datasource.getUserPreferences(userId),
     );
   }
@@ -33,5 +33,12 @@ class UserPreferencesRepositoryImpl implements UserPreferencesRepository {
     return await _safeApiCall.call<UserPreferencesEntity>(
       () => _datasource.updateUserPreferences(userPreferencesEntity),
     );
+  }
+
+  @override
+  Stream<Either<Failure, UserPreferencesEntity?>> getPreferencesStream(
+      String userId) async* {
+    yield* _safeApiCall
+        .callStream(() => _datasource.getPreferencesStream(userId));
   }
 }

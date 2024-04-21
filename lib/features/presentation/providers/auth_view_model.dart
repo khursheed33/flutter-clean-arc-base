@@ -1,51 +1,63 @@
 import 'package:flutter_clean_arc_base/index.dart';
 
 class AuthViewModel extends BaseModel {
-  ThemeData _appTheme = ThemeData();
-  // Getter for appTheme
-  ThemeData get appTheme => _appTheme;
+  final GetUserPreferencesUsecase _getUserPreferencesUsecase;
+  final CreateUserPreferencesUsecase _createUserPreferencesUsecase;
+  final UpdateUserPreferencesUsecase _updateUserPreferencesUsecase;
 
-  // Method to set the app theme
-  void setAppTheme(Brightness brightness) {
-    if (brightness == Brightness.light) {
-      _preferencesController.add(ThemeData.light());
-      return;
-    }
-    _appTheme = newAppTheme(brightness);
-    _preferencesController.add(_appTheme);
+  AuthViewModel({
+    required GetUserPreferencesUsecase getUserPreferencesUsecase,
+    required CreateUserPreferencesUsecase createUserPreferencesUsecase,
+    required UpdateUserPreferencesUsecase updateUserPreferencesUsecase,
+  })  : _getUserPreferencesUsecase = getUserPreferencesUsecase,
+        _createUserPreferencesUsecase = createUserPreferencesUsecase,
+        _updateUserPreferencesUsecase = updateUserPreferencesUsecase;
+
+  UserPreferencesEntity? _userPreferences;
+  UserPreferencesEntity? get userPreferences => _userPreferences;
+
+  void setUserPreferences(UserPreferencesEntity? userPrefs) {
+    _userPreferences = userPrefs;
+    notifyListeners();
   }
 
-  // Declare a StreamController for your preferences
-  final StreamController<ThemeData> _preferencesController =
-      StreamController<ThemeData>.broadcast();
-
-  // Expose the stream to be listened to
-  Stream<ThemeData> get preferencesStream => _preferencesController.stream;
+  Stream<ThemeData> getPreferencesStream() async* {
+    ThemeData theme = ThemeData();
+    final prefRes = await _getUserPreferencesUsecase.call("1");
+    if (prefRes.isLeft()) {
+      yield theme;
+    }
+    final userPrefs = FunctionalResponse.success(prefRes);
+    "_createUserPreferencesUsecase: $_createUserPreferencesUsecase".log();
+    "Prefs: $userPrefs".log();
+    if (userPrefs != null) {
+      theme = userPrefs.themeType == ThemeType.dark
+          ? ThemeData.dark()
+          : ThemeData.light();
+    }
+    yield theme;
+  }
 
   Future<void> getPreferences() async {
-    // setViewState(ViewState.Loading);
-    Future.delayed(const Duration(seconds: 2), () {
-      // setViewState(ViewState.Done);
-      setAppTheme(Brightness.light);
+    final prefRes = await _getUserPreferencesUsecase.call("1");
+
+    final userPrefs = FunctionalResponse.success(prefRes);
+    "Future:Prefs: $userPrefs".log();
+    if (userPrefs != null) {
+      setUserPreferences(userPrefs);
+    }
+  }
+
+  Future<void> updatePreferences(UserPreferencesEntity newPrefs) async {
+    setViewState(ViewState.Loading);
+
+    await _updateUserPreferencesUsecase.call(newPrefs).then((value) {
+      "Updated: ${value.isRight()}".log();
+      setViewState(ViewState.Done);
     });
   }
 
   ThemeData newAppTheme(Brightness brightness) {
-    Color? primaryColor =
-        brightness == Brightness.light ? Colors.teal : Colors.blue;
-    Color? primaryColorDark =
-        brightness == Brightness.light ? Colors.teal[900] : Colors.blue[900];
-    Color? primaryColorLight =
-        brightness == Brightness.light ? Colors.teal[300] : Colors.blue[300];
-    Color textColor =
-        brightness == Brightness.light ? Colors.teal : Colors.white;
-
-    ColorScheme colorScheme = ColorScheme.fromSwatch().copyWith(
-      brightness: brightness,
-      background:
-          brightness == Brightness.light ? Colors.white : Colors.grey[900],
-    );
-
     return ThemeData.dark();
   }
 

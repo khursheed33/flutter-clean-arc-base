@@ -5,7 +5,7 @@ final GetIt locator = GetIt.instance;
 late SharedPreferences preferences;
 
 Future<void> initializeHive() async {
-  final appDocumentsDirectory = await getAppDir();
+  final appDocumentsDirectory = await getSupportDir();
   // Provide the path to store the Hive boxes (data)
   Hive.init(appDocumentsDirectory);
   // Open Hive Box

@@ -7,3 +7,7 @@ import 'package:flutter_clean_arc_base/index.dart';
 abstract class BaseUsecase<ReturnType, Params> {
   Future<Either<Failure, ReturnType>> call(Params params);
 }
+
+abstract class BaseStreamUsecase<ReturnType, Params> {
+  Stream<Either<Failure, ReturnType>> callStream(Params params);
+}

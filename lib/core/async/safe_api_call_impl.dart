@@ -22,17 +22,36 @@ class SafeApiCallImpl extends SafeApiCall {
         return Left(Failure(err.message));
       } on FormatException catch (err) {
         return Left(Failure(err.message));
-      } on IOException catch (err) {
+      } catch (err) {
         return Left(Failure(err.toString()));
-      } on InvalidException catch (err) {
-        return Left(Failure(err.toString()));
-      } on NetworkImageLoadException catch (err) {
-        return Left(Failure(err.toString()));
-      } on TimeoutException catch (err) {
-        return Left(Failure(err.message.toString()));
       }
     } else {
       return Left(Failure("No internet connection!"));
+    }
+  }
+
+  @override
+  Stream<Either<Failure, T>> callStream<T>(
+      Stream<T> Function() handler) async* {
+    final result = await isConnectedUsecase.call(NoParams());
+    final isConnected = FunctionalResponse.success<bool>(result)!;
+    if (isConnected) {
+      try {
+        final response = handler();
+        await for (final data in response) {
+          yield Right(data);
+        }
+      } on HttpException catch (err) {
+        yield Left(Failure(err.message));
+      } on SocketException catch (err) {
+        yield Left(Failure(err.message));
+      } on FormatException catch (err) {
+        yield Left(Failure(err.message));
+      } catch (err) {
+        yield Left(Failure(err.toString()));
+      }
+    } else {
+      yield Left(Failure("No internet connection!"));
     }
   }
 }
