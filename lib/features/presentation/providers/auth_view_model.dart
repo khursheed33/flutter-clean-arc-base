@@ -13,10 +13,18 @@ class AuthViewModel extends BaseModel {
         _createUserPreferencesUsecase = createUserPreferencesUsecase,
         _updateUserPreferencesUsecase = updateUserPreferencesUsecase;
 
-  UserPreferencesEntity? _userPreferences;
-  UserPreferencesEntity? get userPreferences => _userPreferences;
+  UserPreferencesEntity _userPreferences = const UserPreferencesEntity(
+    username: "1",
+    name: "Khursheed",
+    surename: "Gaddi",
+    themeType: ThemeType.dark,
+    languageType: LanguageType.english,
+    currency: "inr",
+    themeColor: "red",
+  );
+  UserPreferencesEntity get userPreferences => _userPreferences;
 
-  void setUserPreferences(UserPreferencesEntity? userPrefs) {
+  void setUserPreferences(UserPreferencesEntity userPrefs) {
     _userPreferences = userPrefs;
     notifyListeners();
   }
@@ -50,11 +58,17 @@ class AuthViewModel extends BaseModel {
 
   Future<void> updatePreferences(UserPreferencesEntity newPrefs) async {
     setViewState(ViewState.Loading);
-
-    await _updateUserPreferencesUsecase.call(newPrefs).then((value) {
-      "Updated: ${value.isRight()}".log();
-      setViewState(ViewState.Done);
-    });
+    const newTheme = UserPreferencesEntity(
+      username: "1",
+      name: "Khursheed",
+      surename: "Gaddi",
+      themeType: ThemeType.light,
+      languageType: LanguageType.english,
+      currency: "inr",
+      themeColor: "red",
+    );
+    setUserPreferences(newTheme);
+    setViewState(ViewState.Done);
   }
 
   ThemeData newAppTheme(Brightness brightness) {

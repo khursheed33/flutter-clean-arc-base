@@ -7,7 +7,7 @@ class AuthenticationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BaseView<AuthViewModel>(
+      body: BaseView<AppPreferencesViewModel>(
         onModelReady: (model) {
           model.getPreferences();
         },
@@ -34,7 +34,7 @@ class AuthenticationScreen extends StatelessWidget {
                 isLoading: model.state == ViewState.Loading,
                 onPressed: () async {
                   final themeType =
-                      model.userPreferences?.themeType == ThemeType.light
+                      model.userPreferences.themeType == ThemeType.light
                           ? ThemeType.dark
                           : ThemeType.light;
                   final newPrefs = UserPreferencesEntity(
@@ -47,7 +47,7 @@ class AuthenticationScreen extends StatelessWidget {
                     themeColor: "red",
                   );
 
-                  "Current: ${model.userPreferences?.themeType} | $themeType"
+                  "Current: ${model.userPreferences.themeType} | $themeType"
                       .log();
                   await model.updatePreferences(newPrefs);
                 },

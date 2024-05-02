@@ -3,7 +3,7 @@ import 'package:flutter_clean_arc_base/index.dart';
 class DiViewModels {
   final GetIt locator;
   DiViewModels({required this.locator}) {
-    locator.registerFactory<AppPreferencesViewModel>(
+    locator.registerLazySingleton<AppPreferencesViewModel>(
       () => AppPreferencesViewModel(
         updateUserPreferencesUsecase: locator.call(),
         getUserPreferencesUsecase: locator.call(),

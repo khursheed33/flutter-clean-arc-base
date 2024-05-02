@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter_clean_arc_base/index.dart';
 
 class AppPreferencesViewModel extends BaseModel {
@@ -16,21 +18,37 @@ class AppPreferencesViewModel extends BaseModel {
         _updateUserPreferencesUsecase = updateUserPreferencesUsecase,
         _getUserPreferencesStreamUsecase = getUserPreferencesStreamUsecase;
 
-  Stream<UserPreferencesEntity?> getPreferencesStream() {
-    StreamController<UserPreferencesEntity?> controller;
-    controller = StreamController<UserPreferencesEntity?>();
+  UserPreferencesEntity _userPreferences = const UserPreferencesEntity(
+    username: "1",
+    name: "Khursheed",
+    surename: "Gaddi",
+    themeType: ThemeType.dark,
+    languageType: LanguageType.english,
+    currency: "inr",
+    themeColor: "red",
+  );
+  UserPreferencesEntity get userPreferences => _userPreferences;
 
-    _getUserPreferencesStreamUsecase.callStream("1").listen((event) {
-      if (event.isRight()) {
-        final userPrefs = FunctionalResponse.success(event);
-        controller.add(userPrefs);
-      } else {
-        // Handle error or return null
-        controller.add(null);
-      }
-    });
+  void setUserPreferences(UserPreferencesEntity userPrefs) {
+    _userPreferences = userPrefs;
+    notifyListeners();
+  }
 
-    return controller.stream;
+  Stream<ThemeData> getPreferencesStream() async* {
+    ThemeData theme = ThemeData();
+    final prefRes = await _getUserPreferencesUsecase.call("1");
+    if (prefRes.isLeft()) {
+      yield theme;
+    }
+    final userPrefs = FunctionalResponse.success(prefRes);
+    "_createUserPreferencesUsecase: $_createUserPreferencesUsecase".log();
+    "Prefs: $userPrefs".log();
+    if (userPrefs != null) {
+      theme = userPrefs.themeType == ThemeType.dark
+          ? ThemeData.dark()
+          : ThemeData.light();
+    }
+    yield theme;
   }
 
   Future<void> getPreferences() async {
@@ -39,23 +57,23 @@ class AppPreferencesViewModel extends BaseModel {
     final userPrefs = FunctionalResponse.success(prefRes);
     "Future:Prefs: $userPrefs".log();
     if (userPrefs != null) {
-      // setUserPreferences(userPrefs);
+      setUserPreferences(userPrefs);
     }
-  }
-
-  Future<void> createUserPreferences() async {
-    "_createUserPreferencesUsecase: $_createUserPreferencesUsecase".log();
   }
 
   Future<void> updatePreferences(UserPreferencesEntity newPrefs) async {
     setViewState(ViewState.Loading);
-
-    Future.delayed(const Duration(seconds: 2), () async {
-      await _updateUserPreferencesUsecase.call(newPrefs).then((value) {
-        "Updated: ${value.isRight()}".log();
-        setViewState(ViewState.Done);
-      });
-    });
+    const newTheme = UserPreferencesEntity(
+      username: "1",
+      name: "Khursheed",
+      surename: "Gaddi",
+      themeType: ThemeType.light,
+      languageType: LanguageType.english,
+      currency: "inr",
+      themeColor: "red",
+    );
+    setUserPreferences(newTheme);
+    setViewState(ViewState.Done);
   }
 
   @override
