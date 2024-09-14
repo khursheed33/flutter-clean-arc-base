@@ -3,15 +3,16 @@ import 'package:flutter_clean_arc_base/index.dart';
 class AuthViewModel extends BaseModel {
   final GetUserPreferencesUsecase _getUserPreferencesUsecase;
   final CreateUserPreferencesUsecase _createUserPreferencesUsecase;
-  final UpdateUserPreferencesUsecase _updateUserPreferencesUsecase;
+  // final UpdateUserPreferencesUsecase _updateUserPreferencesUsecase;
 
   AuthViewModel({
     required GetUserPreferencesUsecase getUserPreferencesUsecase,
     required CreateUserPreferencesUsecase createUserPreferencesUsecase,
     required UpdateUserPreferencesUsecase updateUserPreferencesUsecase,
   })  : _getUserPreferencesUsecase = getUserPreferencesUsecase,
-        _createUserPreferencesUsecase = createUserPreferencesUsecase,
-        _updateUserPreferencesUsecase = updateUserPreferencesUsecase;
+        _createUserPreferencesUsecase = createUserPreferencesUsecase
+  // _updateUserPreferencesUsecase = updateUserPreferencesUsecase
+  ;
 
   UserPreferencesEntity _userPreferences = const UserPreferencesEntity(
     username: "1",
