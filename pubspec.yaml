@@ -38,7 +38,7 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   awesome_notifications: ^0.9.3+1
   url_strategy: ^0.2.0
-  go_router: ^13.2.4
+  go_router: ^13.2.0
   
 
 #:::::::::::::::::::::DEV DEPENDENCIES ::::::::::::::::::::::
