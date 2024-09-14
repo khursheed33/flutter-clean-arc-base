@@ -72,13 +72,13 @@ jobs:
         prerelease: false
 
     - name: Upload APK artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: release-apk
         path: build/app/outputs/apk/release/*.apk
 
     - name: Upload AAB artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: release-aab
         path: build/app/outputs/bundle/release/*.aab
