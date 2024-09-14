@@ -80,7 +80,7 @@ class GenricDropDownState<T> extends State<GenricDropDown<T>> {
                   ),
                 ],
                 color: widget.backgroundColor ??
-                    Theme.of(context).colorScheme.background,
+                    Theme.of(context).colorScheme.surface, // Updated line
                 borderRadius: BorderRadius.circular(8),
               ),
               child: InkWell(
@@ -117,13 +117,13 @@ class GenricDropDownState<T> extends State<GenricDropDown<T>> {
 
                   await showModalBottomSheet(
                     backgroundColor: widget.backgroundColor ??
-                        Theme.of(context).colorScheme.background,
+                        Theme.of(context).colorScheme.surface, // Updated line
                     isDismissible: false,
                     context: context,
                     builder: (ctx) {
                       return PopScope(
                         canPop: false,
-                        onPopInvoked: (falg) => selectOneOption(),
+                        onPopInvoked: (flag) => selectOneOption(),
                         child: Container(
                           constraints: BoxConstraints(
                             maxHeight: widget.items.length * 60.0,
@@ -138,7 +138,6 @@ class GenricDropDownState<T> extends State<GenricDropDown<T>> {
                                       onPressed: () {
                                         setState(() {
                                           _isExpanded = false;
-
                                           Navigator.of(ctx).pop();
                                         });
                                         widget.onChanged(widget.items[index]);

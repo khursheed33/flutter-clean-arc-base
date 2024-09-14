@@ -38,12 +38,14 @@ class AppContainerWithBG extends StatelessWidget {
       padding: padding ?? const EdgeInsets.all(10),
       margin: margin,
       decoration: BoxDecoration(
-        color: color ?? Theme.of(context).colorScheme.background,
+        color:
+            color ?? Theme.of(context).colorScheme.surface, // Updated property
         borderRadius: BorderRadius.circular(radius ?? 10),
         boxShadow: boxShadow,
         border: Border.all(
           width: borderWidth ?? 0.0,
-          color: borderColor ?? Theme.of(context).colorScheme.background,
+          color: borderColor ??
+              Theme.of(context).colorScheme.surface, // Updated property
         ),
       ),
       child: child,
